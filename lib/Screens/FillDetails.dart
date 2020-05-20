@@ -162,6 +162,7 @@ class _fillDetailsState extends State<fillDetails> {
                       const ListTile(
                         leading: CircleAvatar(
                           radius: 20,
+                          //Variable index, title, subtitle to be written
                           child: Text('i.'),
                         ),
                         title: Text('Heart',
