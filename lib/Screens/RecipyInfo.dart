@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:indiarasoi/Models/recipy.dart';
 import 'package:indiarasoi/Screens/FillDetails.dart';
+import 'package:indiarasoi/Services/FoodApi.dart';
 
 class RecipyInfo extends StatefulWidget {
   @override
@@ -7,6 +9,22 @@ class RecipyInfo extends StatefulWidget {
 }
 
 class _RecipyInfoState extends State<RecipyInfo> {
+  List<Recipy> _foods = [];
+
+  _loadFood() async{
+    String fileData = await DefaultAssetBundle.of(context).loadString("assets/food.json");
+    for(Recipy recipy in FoodApi.allrecipiesFromJson(fileData)){
+      _foods.add(recipy);
+    }
+    print(_foods.toString());
+  }
+
+  @override
+  void initState()
+  {
+   super.initState();
+   _loadFood();
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(

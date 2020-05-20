@@ -1,0 +1,16 @@
+{
+  "recipies": [
+    {
+      "id": 1,
+      "recipyname": "Cupcake",
+      "calories": 0.4,
+      "protein": 0.5,
+      "carbohydrates": 0.5,
+      "fat": 0.2,
+      "ingredients": ["Sugar","Egg","Flour","Water"],
+      "stepsno": 8,
+      "steps": ["Add Egg","Add water","Add Sugar","Add microwave for 10 mins"],
+      "itemimage": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"
+    }
+  ]
+}
