@@ -32,7 +32,7 @@ class _RecipyInfoState extends State<RecipyInfo> {
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Colors.teal,
               floating: false,
               pinned: true,
               snap: false,

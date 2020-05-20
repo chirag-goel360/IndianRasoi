@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indiarasoi/Screens/Homepage.dart';
 import 'package:indiarasoi/Screens/RecipyInfo.dart';
 
 void main() {
@@ -6,16 +7,15 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: RecipyInfo(),
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(child: HomePage(),),
     );
   }
 }
