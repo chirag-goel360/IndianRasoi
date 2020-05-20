@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indiarasoi/Screens/Homepage.dart';
 import 'package:indiarasoi/Screens/RecipyInfo.dart';
 
 void main() {
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(child: HomePage(),),
     );
   }
 }
-
