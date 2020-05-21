@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:indiarasoi/Helpers/RecipeDesign.dart';
 import 'package:indiarasoi/Models/recipy.dart';
+import 'package:indiarasoi/Routes/route.dart';
 import 'package:indiarasoi/Screens/RecipyInfo.dart';
 import 'package:indiarasoi/Services/FoodApi.dart';
 
@@ -25,23 +26,19 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _loadFood();
   }
-  @override
-  Widget build(BuildContext context) {
-    int f = foods.length;
-    print(f);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Recipes'),
-        centerTitle: true,
-        backgroundColor: Colors.teal,
+
+  _navigateToDetails(Recipy rec) {
+    Navigator.of(context).push(
+      new FadePageRoute(
+        builder: (c) {
+          return new RecipyInfo(rec);
+        },
+        settings: new RouteSettings(),
       ),
-      drawer: Drawer(child: _getDrawer(context),),
-      body: _buildBody(context,f,foods),
     );
   }
-}
 
-Widget _getDrawer(BuildContext context){
+  Widget _getDrawer(BuildContext context){
   return ListView(
     children: <Widget>[
       DrawerHeader(
@@ -85,21 +82,39 @@ Widget _getDrawer(BuildContext context){
   );
 }
 
-Widget _buildBody(BuildContext context,int f,List<Recipy> foods){
+Widget _buildBody(BuildContext context){
   return Container(
     child: GridView.builder(
       primary:false,
-      itemCount: f,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      itemCount: foods.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
       padding: const EdgeInsets.all(10.0),
-      itemBuilder: (BuildContext context,int index){
-        return GridTile(
-          child: GestureDetector(onTap: ()=>Navigator.of(context).push(
-              MaterialPageRoute(builder:(context)=>RecipyInfo())), child: RecDesign(
-            title: foods[index].recipyname,
-            imgURL: foods[index].itemimage,)),
-        );
-      },
+      itemBuilder:_buildItems,
     ),
   );
 }
+
+Widget _buildItems(BuildContext context, int index){
+  Recipy rec = foods[index];  
+  return GridTile(
+          child: GestureDetector(onTap: ()=>_navigateToDetails(rec), child: RecDesign(
+            title:rec.recipyname,
+            imgURL:rec.itemimage,
+            )),
+        );
+}
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Recipes'),
+        centerTitle: true,
+        backgroundColor: Colors.teal,
+      ),
+      drawer: Drawer(child: _getDrawer(context),),
+      body: _buildBody(context),
+    );
+  }
+}
+

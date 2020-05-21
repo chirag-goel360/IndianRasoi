@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gradients/flutter_gradients.dart';
+import 'package:indiarasoi/Models/recipy.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class fillDetails extends StatefulWidget {
+  final Recipy rec;
+  fillDetails(this.rec);
   @override
   _fillDetailsState createState() => _fillDetailsState();
 }
 
 class _fillDetailsState extends State<fillDetails> {
+
   Widget chips(String label,Color color)
   {
     return Container(
@@ -53,7 +57,7 @@ class _fillDetailsState extends State<fillDetails> {
                   animation: true,
                   animationDuration: 1200,
                   lineWidth: 8,
-                  percent: 0.8,
+                  percent: widget.rec.calories,
                   center: Text('Calories',
                     style: TextStyle(
                       fontSize: 14,
@@ -70,7 +74,7 @@ class _fillDetailsState extends State<fillDetails> {
                   animation: true,
                   animationDuration: 1200,
                   lineWidth: 8,
-                  percent: 0.5,
+                  percent: widget.rec.protein,
                   center: Text('Protein',
                   style: TextStyle(
                     fontSize: 14,
@@ -88,7 +92,7 @@ class _fillDetailsState extends State<fillDetails> {
                   animation: true,
                   animationDuration: 1200,
                   lineWidth: 8,
-                  percent: 0.5,
+                  percent: widget.rec.carbohydrates,
                   center: Text('Carb',
                     style: TextStyle(
                     fontSize: 14,
@@ -105,7 +109,7 @@ class _fillDetailsState extends State<fillDetails> {
                   animation: true,
                   animationDuration: 1200,
                   lineWidth: 8,
-                  percent: 0.2,
+                  percent: widget.rec.fat,
                   center: Text('Fat',
                     style: TextStyle(
                       fontSize: 14,
@@ -131,10 +135,8 @@ class _fillDetailsState extends State<fillDetails> {
           Wrap(
             //Variable ingredients to be written
             children: <Widget>[
-              chips('Sugar',Colors.green),
-              chips('Egg',Colors.green),
-              chips('Flour',Colors.green),
-              chips('Water',Colors.green),
+              for(int i=0;i<widget.rec.ingredients.length;i++)
+                chips(widget.rec.ingredients[i],Colors.green),
             ],
           ),
           Center(child: Text('Steps',
@@ -145,11 +147,21 @@ class _fillDetailsState extends State<fillDetails> {
             ),
           )
           ),
+
+            buildItemsContent(context)
           //Variable Length for the cards
-          for(int i=0;i<8;i++)
-          Container(
+          // ListView.builder(shrinkWrap: true,itemBuilder: buildItemsContent, itemCount: widget.rec.stepsno,),
+        ],
+      ),
+    );
+  
+  }
+
+  Widget buildItemsContent(BuildContext context){
+    return Container(
             child: Column(
               children: <Widget>[
+                 for(int i=0;i<widget.rec.stepsno;i++)
                 Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -159,31 +171,30 @@ class _fillDetailsState extends State<fillDetails> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      const ListTile(
+                     // for(int i=0;i<widget.rec.stepsno;i++)
+                       ListTile(
                         leading: CircleAvatar(
                           radius: 20,
                           //Variable index, title, subtitle to be written
-                          child: Text('i.'),
+                          child:  Text((i+1).toString()),
                         ),
-                        title: Text('Heart',
+                        title: Text('Step No.'+ (i+1).toString(),
                         style: TextStyle(
                           color: Colors.black,
                         ),
                         ),
-                        subtitle: Text ('djknkvfdj nbglfksbnf sfnjvsvkfjvkjf fkjssnnskjf vsdhiuisidhv shshdbhsbvj djshsjdbj sdfhjfjf dshjdgbjd',
+                        subtitle: Text (widget.rec.steps[i],
                         style: TextStyle(
                           color: Colors.black,
                         ),
                         ),
-                      )
+                      ),
+                      
                     ],
                   ),
                 ),
               ],
             ),
-          )
-        ],
-      ),
-    );
+          );
   }
 }
