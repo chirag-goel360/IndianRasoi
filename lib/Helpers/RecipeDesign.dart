@@ -15,10 +15,10 @@ class RecDesign extends StatelessWidget {
       // height: 150.0,
       // width: 200.0,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Container(
-            height: 150,
+            height: 130,
             width: 200,
             child:Image(image: NetworkImage(imgURL),
             fit: BoxFit.fill,)
@@ -27,7 +27,7 @@ class RecDesign extends StatelessWidget {
             color:Colors.white,
             child: Text(title,
             style: TextStyle(
-              fontSize: 30.0,
+              fontSize: 25.0,
             ),
             ),
           ),
