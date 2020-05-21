@@ -18,14 +18,16 @@ class RecDesign extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Container(
-            child:Image(image: NetworkImage('https://www.oyorooms.com/blog/wp-content/uploads/2019/06/Top-10-Hunger-Points-for-Foodies-in-Delhi-Hero-Image.jpg'),)
+            height: 150,
+            width: 200,
+            child:Image(image: NetworkImage(imgURL),
+            fit: BoxFit.fill,)
           ),
           Container(
             color:Colors.white,
             child: Text(title,
             style: TextStyle(
               fontSize: 30.0,
-              
             ),
             ),
           ),
