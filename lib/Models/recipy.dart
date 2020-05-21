@@ -7,6 +7,7 @@ class Recipy{
   final double protein;
   final double carbohydrates;
   final double fat;
+  final List<String> categories;
   final List<String> ingredients;
   final int stepsno;
   final List<String> steps;
@@ -19,6 +20,7 @@ class Recipy{
     @required this.protein,
     @required this.carbohydrates,
     @required this.fat,
+    @required this.categories,
     @required this.ingredients,
     @required this.stepsno,
     @required this.steps,

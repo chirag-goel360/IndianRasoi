@@ -139,6 +139,22 @@ class _fillDetailsState extends State<fillDetails> {
                 chips(widget.rec.ingredients[i],Colors.green),
             ],
           ),
+          SizedBox(height: 10),
+          Center(child: Text('Categories',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              color: Colors.black,
+            ),
+          )
+          ),
+          Wrap(
+            //Variable ingredients to be written
+            children: <Widget>[
+              for(int i=0;i<widget.rec.categories.length;i++)
+                chips(widget.rec.categories[i],Colors.blue),
+            ],
+          ),
           Center(child: Text('Steps',
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -147,10 +163,6 @@ class _fillDetailsState extends State<fillDetails> {
             ),
           )
           ),
-
-            buildItemsContent(context)
-          //Variable Length for the cards
-          // ListView.builder(shrinkWrap: true,itemBuilder: buildItemsContent, itemCount: widget.rec.stepsno,),
         ],
       ),
     );
@@ -189,7 +201,6 @@ class _fillDetailsState extends State<fillDetails> {
                         ),
                         ),
                       ),
-                      
                     ],
                   ),
                 ),

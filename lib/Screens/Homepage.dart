@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:indiarasoi/Helpers/LoadDrawer.dart';
 import 'package:indiarasoi/Helpers/RecipeDesign.dart';
 import 'package:indiarasoi/Models/recipy.dart';
 import 'package:indiarasoi/Routes/route.dart';
+import 'package:indiarasoi/Screens/Developers.dart';
 import 'package:indiarasoi/Screens/RecipyInfo.dart';
 import 'package:indiarasoi/Services/FoodApi.dart';
 
@@ -45,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(
           color: Colors.teal,
           image: DecorationImage(
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             image:  NetworkImage('https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2017/08/foodie-apps1.jpg'),
           ),
         ),
@@ -62,21 +64,38 @@ class _HomePageState extends State<HomePage> {
         ,),
       ListTile(
         title: Text('Desserts'),
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
       ),
       ListTile(
         title: Text('Snacks'),
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
       ),
       ListTile(
         title: Text('Main Course'),
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
       ),
       ListTile(
-        title: Text('Chinese'),
+        title: Text('Breakfast'),
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
       ),
       ListTile(
-        title: Text('Italian'),
+        title: Text('Lunch'),
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
       ),
       ListTile(
-        title: Text('Mexican'),
+        title: Text('Dinner'),
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
+      ),
+      ListTile(
+        title: Text('EasyCook'),
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
+      ),
+      Divider(
+        color: Colors.black,
+      ),
+      ListTile(
+        title: Text('About Developers'),
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>DevelopersInfo()));},
       ),
     ],
   );

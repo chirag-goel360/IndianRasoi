@@ -18,6 +18,7 @@ class FoodApi{
         protein: map['protein'],
         carbohydrates: map['carbohydrates'],
         fat: map['fat'],
+        categories: new List<String>.from(map['categories']),
         ingredients: new List<String>.from(map['ingredients']),
         stepsno: map['stepsno'],
         steps: new List<String>.from(map['steps']),
