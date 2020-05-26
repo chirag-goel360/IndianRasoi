@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "324871773683",
+    "firebase_url": "https://indianrasoi-29dce.firebaseio.com",
+    "project_id": "indianrasoi-29dce",
+    "storage_bucket": "indianrasoi-29dce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324871773683:android:6253584f63ff5440a74686",
+        "android_client_info": {
+          "package_name": "com.example.indiarasoi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324871773683-amuujl4uok3nktnsbs2p1v0m5ogrbs4q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoPP1gwNhNtvErx1TGKB6OQQs42QOC3xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324871773683-amuujl4uok3nktnsbs2p1v0m5ogrbs4q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

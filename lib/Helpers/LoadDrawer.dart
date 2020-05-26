@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:indiarasoi/Screens/Developers.dart';
-import 'package:indiarasoi/Screens/FillDetails.dart';
 
 class LoadData extends StatefulWidget {
   @override
@@ -12,7 +11,6 @@ class _LoadDataState extends State<LoadData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //Variable Category to be written
         title: Text('Category'),
       ),
       backgroundColor: Colors.green.shade50,
@@ -30,7 +28,6 @@ class _LoadDataState extends State<LoadData> {
                   elevation: 5,
                   child: InkWell(
                     onTap: (){
-                      //Navigate to fillDetails Page
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>DevelopersInfo()));
                     },
                     child: Row(

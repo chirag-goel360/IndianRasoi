@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indiarasoi/Models/recipy.dart';
 import 'package:indiarasoi/Screens/FillDetails.dart';
-import 'package:indiarasoi/Services/FoodApi.dart';
 
 class RecipyInfo extends StatefulWidget {
   final Recipy rec;
@@ -25,7 +24,6 @@ class _RecipyInfoState extends State<RecipyInfo> {
               expandedHeight: 200,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                //Variable Name to be written
                 title: Text(widget.rec.recipyname,
                 style: TextStyle(
                   color: Colors.pink,
@@ -34,7 +32,6 @@ class _RecipyInfoState extends State<RecipyInfo> {
                 ),
                 ),
                 background: Image(
-                  //Variable Image to be written
                   image: NetworkImage(widget.rec.itemimage,),
                   fit: BoxFit.fill,
                 ),

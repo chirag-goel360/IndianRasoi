@@ -15,14 +15,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Recipy> foods = [];
+  FoodApi ap=FoodApi();
   _loadFood() async{
-    String fileData = await DefaultAssetBundle.of(context).loadString("assets/food.json");
+    foods = await ap.getAllRecipy();
     setState(() {
-      foods = FoodApi.allrecipiesFromJson(fileData);
+      foods=foods;
     });
     print(foods.length);
     print(foods.toString());
   }
+
+  Future<Null> refresh(){
+    _loadFood();
+    return new Future<Null>.value();
+  }
+
   void initState()
   {
     super.initState();
@@ -119,7 +126,8 @@ Widget _buildItems(BuildContext context, int index){
           child: GestureDetector(onTap: ()=>_navigateToDetails(rec), child: RecDesign(
             title:rec.recipyname,
             imgURL:rec.itemimage,
-            )),
+            )
+          ),
         );
 }
 
@@ -136,4 +144,3 @@ Widget _buildItems(BuildContext context, int index){
     );
   }
 }
-

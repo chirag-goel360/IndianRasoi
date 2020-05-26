@@ -49,7 +49,6 @@ class _fillDetailsState extends State<fillDetails> {
           SizedBox(height: 10),
           Container(
             child: Row(
-              //Variable percent to be written for calories, protein, carb, fat
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CircularPercentIndicator(
@@ -86,7 +85,6 @@ class _fillDetailsState extends State<fillDetails> {
                   progressColor: Colors.deepPurpleAccent,
                 ),
                 Padding(padding: EdgeInsets.only(left: 10),),
-                //Variable Change Indicators to be written
                 CircularPercentIndicator(
                   radius: 80.0,
                   animation: true,
@@ -133,7 +131,6 @@ class _fillDetailsState extends State<fillDetails> {
           )
           ),
           Wrap(
-            //Variable ingredients to be written
             children: <Widget>[
               for(int i=0;i<widget.rec.ingredients.length;i++)
                 chips(widget.rec.ingredients[i],Colors.green),
@@ -149,7 +146,6 @@ class _fillDetailsState extends State<fillDetails> {
           )
           ),
           Wrap(
-            //Variable ingredients to be written
             children: <Widget>[
               for(int i=0;i<widget.rec.categories.length;i++)
                 chips(widget.rec.categories[i],Colors.blue),
@@ -163,17 +159,18 @@ class _fillDetailsState extends State<fillDetails> {
             ),
           )
           ),
+          buildItemsContent(context),
         ],
       ),
     );
-  
   }
 
   Widget buildItemsContent(BuildContext context){
+    print(widget.rec.steps.length);
     return Container(
             child: Column(
               children: <Widget>[
-                 for(int i=0;i<widget.rec.stepsno;i++)
+                 for(int i=0;i<widget.rec.steps.length;i++)
                 Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -183,11 +180,9 @@ class _fillDetailsState extends State<fillDetails> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                     // for(int i=0;i<widget.rec.stepsno;i++)
                        ListTile(
                         leading: CircleAvatar(
                           radius: 20,
-                          //Variable index, title, subtitle to be written
                           child:  Text((i+1).toString()),
                         ),
                         title: Text('Step No.'+ (i+1).toString(),

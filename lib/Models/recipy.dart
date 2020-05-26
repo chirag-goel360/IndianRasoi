@@ -1,6 +1,7 @@
 import 'package:meta/meta.dart';
 
 class Recipy{
+  final String documentId;
   final int id;
   final String recipyname;
   final double calories;
@@ -14,6 +15,7 @@ class Recipy{
   final String itemimage;
 
   Recipy({
+    @required this.documentId,
     @required this.id,
     @required this.recipyname,
     @required this.calories,

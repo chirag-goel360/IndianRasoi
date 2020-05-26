@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:indiarasoi/Screens/Homepage.dart';
-import 'package:indiarasoi/Screens/RecipyInfo.dart';
 
 void main() {
   runApp(MyApp());

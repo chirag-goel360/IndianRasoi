@@ -12,8 +12,6 @@ class RecDesign extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.blueGrey)
       ),
-      // height: 150.0,
-      // width: 200.0,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
