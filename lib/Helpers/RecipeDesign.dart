@@ -23,10 +23,12 @@ class RecDesign extends StatelessWidget {
           ),
           Container(
             color:Colors.white,
-            child: Text(title,
-            style: TextStyle(
-              fontSize: 25.0,
-            ),
+            child: FittedBox(
+              child: Text(title,
+              style: TextStyle(
+                fontSize: 25.0,
+              ),
+              ),
             ),
           ),
         ],

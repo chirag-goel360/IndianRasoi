@@ -26,7 +26,7 @@ class _RecipyInfoState extends State<RecipyInfo> {
                 centerTitle: true,
                 title: Text(widget.rec.recipyname,
                 style: TextStyle(
-                  color: Colors.pink,
+                  color: Colors.black87,
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                 ),
