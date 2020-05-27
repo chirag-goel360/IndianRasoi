@@ -9,9 +9,18 @@ class RecDesign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.blueGrey)
+        color: Colors.white,
+        border: Border.all(color: Colors.blueGrey),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(10.0),
+          bottomRight: Radius.circular(10.0),
+          topLeft: Radius.circular(5.0),
+          topRight: Radius.circular(5.0),
+        ),
       ),
+
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -19,10 +28,10 @@ class RecDesign extends StatelessWidget {
             height: 130,
             width: 200,
             child:Image(image: NetworkImage(imgURL),
-            fit: BoxFit.fill,)
+            fit: BoxFit.cover,alignment: Alignment.center,)
           ),
           Container(
-            color:Colors.white,
+            // color:Colors.white,
             child: FittedBox(
               child: Text(title,
               style: TextStyle(

@@ -108,14 +108,30 @@ class _HomePageState extends State<HomePage> {
   );
 }
 
-Widget _buildBody(BuildContext context){
-  return Container(
-    child: GridView.builder(
-      primary:false,
-      itemCount: foods.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
-      padding: const EdgeInsets.all(10.0),
-      itemBuilder:_buildItems,
+Widget _buildBody(BuildContext context) {
+  return new Container(
+    margin: const EdgeInsets.fromLTRB(8.0,0.0,8.0,0.0),
+    child: new Column(
+    children: <Widget>[
+      _getListViewWidget(context),
+    ],
+    ),
+  );
+}
+
+Widget _getListViewWidget(BuildContext context){
+  return Flexible(
+    child: RefreshIndicator(
+      onRefresh: refresh,
+      color: Colors.green,
+      child: GridView.builder(
+        physics: AlwaysScrollableScrollPhysics(),
+        primary:false,
+        itemCount: foods.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
+        padding: const EdgeInsets.all(10.0),
+        itemBuilder:_buildItems,
+      ),
     ),
   );
 }
