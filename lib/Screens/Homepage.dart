@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gradients/flutter_gradients.dart';
 import 'package:indiarasoi/Helpers/LoadDrawer.dart';
 import 'package:indiarasoi/Helpers/RecipeDesign.dart';
 import 'package:indiarasoi/Models/recipy.dart';
@@ -110,6 +111,7 @@ class _HomePageState extends State<HomePage> {
 
 Widget _buildBody(BuildContext context) {
   return new Container(
+    color: Colors.white70,
     margin: const EdgeInsets.fromLTRB(8.0,0.0,8.0,0.0),
     child: new Column(
     children: <Widget>[
@@ -139,7 +141,9 @@ Widget _getListViewWidget(BuildContext context){
 Widget _buildItems(BuildContext context, int index){
   Recipy rec = foods[index];  
   return GridTile(
-          child: GestureDetector(onTap: ()=>_navigateToDetails(rec), child: RecDesign(
+          child: GestureDetector(
+              onTap: ()=>_navigateToDetails(rec),
+              child: RecDesign(
             title:rec.recipyname,
             imgURL:rec.itemimage,
             )

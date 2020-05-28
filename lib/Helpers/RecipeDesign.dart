@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gradients/flutter_gradients.dart';
 
 class RecDesign extends StatelessWidget {
   final String title;
@@ -9,8 +10,8 @@ class RecDesign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       decoration: BoxDecoration(
+        gradient: FlutterGradient.everlastingSky(),
         color: Colors.white,
         border: Border.all(color: Colors.blueGrey),
         borderRadius: BorderRadius.only(
@@ -31,11 +32,11 @@ class RecDesign extends StatelessWidget {
             fit: BoxFit.cover,alignment: Alignment.center,)
           ),
           Container(
-            // color:Colors.white,
             child: FittedBox(
               child: Text(title,
               style: TextStyle(
                 fontSize: 25.0,
+                fontWeight: FontWeight.w500,
               ),
               ),
             ),
