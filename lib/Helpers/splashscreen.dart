@@ -1,6 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:indiarasoi/Screens/Homepage.dart';
+import 'package:indiarasoi/Helpers/loadBoard.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -14,18 +15,50 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(Duration(seconds: 5), (){
       Navigator.pushReplacement(context,
-      MaterialPageRoute(builder: (context) => HomePage()));
+      MaterialPageRoute(builder: (context) => TestScreen()));
     }
     );
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FlareActor("assets/foodssplash.flr",
-      alignment:Alignment.center,
-      fit: BoxFit.contain,
-      animation:"loading"
-      ),
+      body: Stack(
+        children: <Widget>[
+          Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/loadingscreen.png"),
+                  fit: BoxFit.fill,
+                )
+              ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                height: 100,
+                child: Text('Indian Rasoi',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.pink
+                  ),
+                ),
+              ),
+              Container(
+                height: 400,
+                width: 400,
+                child: FlareActor("assets/foodssplash.flr",
+                    alignment:Alignment.center,
+                    fit: BoxFit.contain,
+                    animation:"loading"
+                ),
+              ),
+            ],
+          ),
+        ],
+      )
     );
   }
 }
