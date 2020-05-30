@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:indiarasoi/Screens/Login.dart';
+import 'package:indiarasoi/Services/sign_in.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 
@@ -217,7 +219,16 @@ class signPage extends StatelessWidget {
                             child: RawMaterialButton(
                               shape: CircleBorder(),
                               onPressed: (){
-
+                                signInwithGoogle().whenComplete((){
+                                  Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context){
+                                            //Open Chat Page here
+                                            return LoginPage();
+                                          }
+                                      )
+                                  );
+                                });
                               },
                               child: Icon(
                                 FontAwesomeIcons.google,
