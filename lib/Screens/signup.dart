@@ -172,7 +172,15 @@ class signPage extends StatelessWidget {
                             child: RawMaterialButton(
                               shape: CircleBorder(),
                               onPressed: (){
-
+                                 facebookLogin().whenComplete((){
+                                  Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context){
+                                            return LoginPage();
+                                          }
+                                      )
+                                  );
+                                });
                               },
                               child: Icon(
                                 FontAwesomeIcons.facebookF,
