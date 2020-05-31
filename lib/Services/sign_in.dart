@@ -52,7 +52,7 @@ Future <String> facebookLogin() async {
       assert(await user.getIdToken() != null);
       final FirebaseUser currentUser = await _auth.currentUser();
       assert(user.uid == currentUser.uid);
-      return 'signInwithGoogle succeeded: $user';
+      return 'signInwithFacebook succeeded: $user';
     }
   }
     catch(e){
