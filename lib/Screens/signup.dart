@@ -155,6 +155,7 @@ class signPage extends StatelessWidget {
                       ),),
                     SizedBox(height: 15.0,),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         SizedBox(width: 20.0,),
                         Expanded(
@@ -175,30 +176,6 @@ class signPage extends StatelessWidget {
                               },
                               child: Icon(
                                 FontAwesomeIcons.facebookF,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 10.0,),
-                        Expanded(
-                          child: Container(
-                            width: 60,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              gradient: LinearGradient(
-                                  colors: [Colors.lightBlueAccent,Colors.lightBlue.shade900],
-                                  tileMode: TileMode.clamp
-                              ),
-                            ),
-                            child: RawMaterialButton(
-                              shape: CircleBorder(),
-                              onPressed: (){
-
-                              },
-                              child: Icon(
-                                FontAwesomeIcons.twitter,
                                 color: Colors.white,
                               ),
                             ),
