@@ -1,66 +1,102 @@
 import 'package:flutter/material.dart';
-import 'package:indiarasoi/Screens/Developers.dart';
+import 'package:indiarasoi/Helpers/RecipeDesign.dart';
+import 'package:indiarasoi/Models/recipy.dart';
+import 'package:indiarasoi/Routes/route.dart';
+import 'package:indiarasoi/Screens/RecipyInfo.dart';
 
 class LoadData extends StatefulWidget {
+  final String category;
+  final List<Recipy> foods;
+  LoadData({this.category, this.foods});
   @override
   _LoadDataState createState() => _LoadDataState();
 }
 
 class _LoadDataState extends State<LoadData> {
+  int count = 0;
+  List<Recipy> items = [];
+  _navigateToDetails(Recipy rec) {
+    Navigator.of(context).push(
+      new FadePageRoute(
+        builder: (c) {
+          return new RecipyInfo(rec);
+        },
+        settings: new RouteSettings(),
+      ),
+    );
+  }
+
+  Widget _buildBody(BuildContext context) {
+    return new Container(
+      color: Colors.white70,
+      margin: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+      child: new Column(
+        children: <Widget>[
+          _getListViewWidget(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _getListViewWidget(BuildContext context) {
+    return Flexible(
+      child: GridView.builder(
+        physics: AlwaysScrollableScrollPhysics(),
+        primary: false,
+        itemCount: items.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
+        padding: const EdgeInsets.all(10.0),
+        itemBuilder: _buildItems,
+      ),
+    );
+  }
+
+  Widget _buildItems(BuildContext context, int index) {
+    Recipy rec = items[index];
+    return GridTile(
+      child: GestureDetector(
+          onTap: () => _navigateToDetails(rec),
+          child: RecDesign(
+            title: rec.recipyname,
+            imgURL: rec.itemimage,
+          )),
+    );
+  }
+
+  void totalRec() {
+    List<Recipy> rec = widget.foods;
+    for (int i = 0; i < rec.length; i++) {
+      for (int j = 0; j < rec[i].categories.length; j++) {
+        if (rec[i].categories[j] == widget.category) {
+          items.add(rec[i]);
+        }
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    // print(widget.category);
+    totalRec();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Category'),
+        title: Text('Recipes'),
+        centerTitle: true,
+        backgroundColor: Colors.teal,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.chat,
+                color: Colors.white,
+              ),
+              onPressed: null)
+        ],
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () => Navigator.pop(context)),
       ),
-      backgroundColor: Colors.green.shade50,
-      body: SingleChildScrollView(
-        child: Container(
-          height: 500,
-          child: Column(
-            children: <Widget>[
-              Center(
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  color: Colors.greenAccent,
-                  elevation: 5,
-                  child: InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DevelopersInfo()));
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Container(
-                          height: 150,
-                          width: 350,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage('https://cdn.eso.org/images/thumb300y/eso1322d.jpg'),
-                              fit: BoxFit.fill,
-                            )
-                          ),
-                          child: Center(
-                            child: Text('Cupkake',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                            ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+      body: _buildBody(context),
     );
   }
 }

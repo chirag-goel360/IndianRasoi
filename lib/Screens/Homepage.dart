@@ -15,23 +15,22 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Recipy> foods = [];
-  FoodApi ap=FoodApi();
-  _loadFood() async{
+  FoodApi ap = FoodApi();
+  _loadFood() async {
     foods = await ap.getAllRecipy();
     setState(() {
-      foods=foods;
+      foods = foods;
     });
     print(foods.length);
     print(foods.toString());
   }
 
-  Future<Null> refresh(){
+  Future<Null> refresh() {
     _loadFood();
     return new Future<Null>.value();
   }
 
-  void initState()
-  {
+  void initState() {
     super.initState();
     _loadFood();
   }
@@ -47,108 +46,173 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _getDrawer(BuildContext context){
-  return ListView(
-    children: <Widget>[
-      DrawerHeader(
-        decoration: BoxDecoration(
-          color: Colors.teal,
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image:  NetworkImage('https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2017/08/foodie-apps1.jpg'),
+  Widget _getDrawer(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        DrawerHeader(
+          decoration: BoxDecoration(
+            color: Colors.teal,
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: NetworkImage(
+                  'https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2017/08/foodie-apps1.jpg'),
+            ),
+          ),
+          child: Center(
+            child: Container(
+              child: Text(
+                'IndianRasoi',
+                style: TextStyle(fontSize: 45.0, color: Colors.black),
+              ),
+            ),
           ),
         ),
-        child: Center(
-          child: Container(
-            child: Text(
-              'IndianRasoi',
-              style: TextStyle(
-                  fontSize: 45.0,
-                  color: Colors.black
-              ),),
-          ),
-        )
-        ,),
-      ListTile(
-        title: Text('Desserts'),
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
-      ),
-      ListTile(
-        title: Text('Snacks'),
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
-      ),
-      ListTile(
-        title: Text('Main Course'),
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
-      ),
-      ListTile(
-        title: Text('Breakfast'),
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
-      ),
-      ListTile(
-        title: Text('Lunch'),
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
-      ),
-      ListTile(
-        title: Text('Dinner'),
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
-      ),
-      ListTile(
-        title: Text('EasyCook'),
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>LoadData()));},
-      ),
-      Divider(
-        color: Colors.black,
-      ),
-      ListTile(
-        title: Text('About Developers'),
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>DevelopersInfo()));},
-      ),
-    ],
-  );
-}
+        ListTile(
+          title: Text('Desserts'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LoadData(
+                          category: 'Dessert',
+                          foods: foods,
+                        )));
+          },
+        ),
+        ListTile(
+          title: Text('Snacks'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LoadData(
+                          category: 'Snacks',
+                          foods: foods,
+                        )));
+          },
+        ),
+        ListTile(
+          title: Text('Main Course'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LoadData(
+                          category: 'Main Course',
+                          foods: foods,
+                        )));
+          },
+        ),
+        ListTile(
+          title: Text('Breakfast'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LoadData(
+                          category: 'Breakfast',
+                          foods: foods,
+                        )));
+          },
+        ),
+        ListTile(
+          title: Text('Lunch'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LoadData(
+                          category: 'Lunch',
+                          foods: foods,
+                        )));
+          },
+        ),
+        ListTile(
+          title: Text('Dinner'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LoadData(
+                          category: 'Dinner',
+                          foods: foods,
+                        )));
+          },
+        ),
+        ListTile(
+          title: Text('EasyCook'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LoadData(
+                          category: 'EasyCook',
+                          foods: foods,
+                        )));
+          },
+        ),
+        Divider(
+          color: Colors.black,
+        ),
+        ListTile(
+          title: Text('About Developers'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DevelopersInfo()));
+          },
+        ),
+      ],
+    );
+  }
 
-Widget _buildBody(BuildContext context) {
-  return new Container(
-    color: Colors.white70,
-    margin: const EdgeInsets.fromLTRB(8.0,0.0,8.0,0.0),
-    child: new Column(
-    children: <Widget>[
-      _getListViewWidget(context),
-    ],
-    ),
-  );
-}
-
-Widget _getListViewWidget(BuildContext context){
-  return Flexible(
-    child: RefreshIndicator(
-      onRefresh: refresh,
-      color: Colors.green,
-      child: GridView.builder(
-        physics: AlwaysScrollableScrollPhysics(),
-        primary:false,
-        itemCount: foods.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
-        padding: const EdgeInsets.all(10.0),
-        itemBuilder:_buildItems,
+  Widget _buildBody(BuildContext context) {
+    return new Container(
+      color: Colors.white70,
+      margin: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+      child: new Column(
+        children: <Widget>[
+          _getListViewWidget(context),
+        ],
       ),
-    ),
-  );
-}
+    );
+  }
 
-Widget _buildItems(BuildContext context, int index){
-  Recipy rec = foods[index];  
-  return GridTile(
-          child: GestureDetector(
-              onTap: ()=>_navigateToDetails(rec),
-              child: RecDesign(
-            title:rec.recipyname,
-            imgURL:rec.itemimage,
-            )
-          ),
-        );
-}
+  Widget _getListViewWidget(BuildContext context) {
+    return Flexible(
+      child: RefreshIndicator(
+        onRefresh: refresh,
+        color: Colors.green,
+        child: GridView.builder(
+          physics: AlwaysScrollableScrollPhysics(),
+          primary: false,
+          itemCount: foods.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
+          padding: const EdgeInsets.all(10.0),
+          itemBuilder: _buildItems,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildItems(BuildContext context, int index) {
+    Recipy rec = foods[index];
+    return GridTile(
+      child: GestureDetector(
+          onTap: () => _navigateToDetails(rec),
+          child: RecDesign(
+            title: rec.recipyname,
+            imgURL: rec.itemimage,
+          )),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -157,8 +221,18 @@ Widget _buildItems(BuildContext context, int index){
         title: Text('Recipes'),
         centerTitle: true,
         backgroundColor: Colors.teal,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.chat,
+                color: Colors.white,
+              ),
+              onPressed: null)
+        ],
       ),
-      drawer: Drawer(child: _getDrawer(context),),
+      drawer: Drawer(
+        child: _getDrawer(context),
+      ),
       body: _buildBody(context),
     );
   }

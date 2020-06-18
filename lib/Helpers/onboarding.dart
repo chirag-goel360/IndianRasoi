@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gradients/flutter_gradients.dart';
 import 'package:indiarasoi/Helpers/onboardingdata.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -46,70 +47,71 @@ class IntroScreenState extends State<IntroScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red.shade100,
-      padding: const EdgeInsets.all(10.0),
-      child: new Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          new Expanded(
-            flex: 1,
-            child: new Container(),
-          ),
-          new Expanded(
-            flex: 3,
-            child: new PageView(
-              children: widget.onbordingDataList,
-              controller: controller,
-              onPageChanged: _onPageChanged,
+    return SafeArea(
+          child: Container(
+        decoration: BoxDecoration(
+          gradient: FlutterGradient.cleanMirror()
+        ),
+        padding: const EdgeInsets.all(10.0),
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            new Expanded(
+              flex:5,
+              child: new PageView(
+                physics: BouncingScrollPhysics(),
+                children: widget.onbordingDataList,
+                controller: controller,
+                onPageChanged: _onPageChanged,
+              ),
             ),
-          ),
-          new Expanded(
-            flex: 1,
-            child: new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                new FlatButton(
-                  child: new Text(lastPage ? "" : "SKIP",
-                      style: new TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0)),
-                  onPressed: () => lastPage
-                      ? null
-                      : widget.skipPage(
-                    context,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: Container(
-                    child: Row(
-                      children: [
-                        _buildPageIndicator(0),
-                        _buildPageIndicator(1),
-                        _buildPageIndicator(2),
-                      ],
+            new Expanded(
+              flex: 1,
+              child: new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  new FlatButton(
+                    child: new Text(lastPage ? "" : "SKIP",
+                        style: new TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0)),
+                    onPressed: () => lastPage
+                        ? null
+                        : widget.skipPage(
+                      context,
                     ),
                   ),
-                ),
-                FlatButton(
-                  child: new Text(lastPage ? "GOT IT" : "NEXT",
-                      style: new TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0)),
-                  onPressed: () => lastPage
-                      ? widget.skipPage(context)
-                      : controller.nextPage(
-                      duration: Duration(milliseconds: 300),
-                      curve: Curves.easeIn),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    child: Container(
+                      child: Row(
+                        children: [
+                          _buildPageIndicator(0),
+                          _buildPageIndicator(1),
+                          _buildPageIndicator(2),
+                        ],
+                      ),
+                    ),
+                  ),
+                  FlatButton(
+                    child: new Text(lastPage ? "GOT IT" : "NEXT",
+                        style: new TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0)),
+                    onPressed: () => lastPage
+                        ? widget.skipPage(context)
+                        : controller.nextPage(
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.easeIn),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

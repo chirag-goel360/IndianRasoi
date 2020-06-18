@@ -9,19 +9,19 @@ class TestScreen extends StatelessWidget {
       imagePath: "assets/onboarding1.jpg",
       title: "Indian Rasoi",
       desc:
-      "Welcome to Indian Rasoi,app for food lovers,satisfy your taste",
+      "Welcome to Indian Rasoi\n App for food lovers\n Satisfy your taste",
     ),
     OnbordingData(
       imagePath: "assets/onboarding2.png",
       title: "Recipies",
       desc:
-      "Here the Recipies are made with love for you and your sweet one's",
+      "Here the recipies are made with love for you and your loved one's",
     ),
     OnbordingData(
       imagePath: "assets/onboarding3.jpg",
       title: "Love",
       desc:
-      "Make Food for your loved one's with taking care of calories",
+      "Make food for your loved one's with taking care of calories",
     ),
   ];
   @override
