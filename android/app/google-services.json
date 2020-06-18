@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "324871773683-rm10d1el2ie2080n9pind8gvbantdsnl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.indiarasoi",
+            "certificate_hash": "821400626abe04b64cdc16a16bc77e0f0593a80c"
+          }
+        },
+        {
+          "client_id": "324871773683-g84n3inotql6jcvbqhm0vqf0m242fg08.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.indiarasoi",
+            "certificate_hash": "b5d426e702509e24a31260f0bb93d84467fbdeca"
+          }
+        },
+        {
           "client_id": "324871773683-amuujl4uok3nktnsbs2p1v0m5ogrbs4q.apps.googleusercontent.com",
           "client_type": 3
         }

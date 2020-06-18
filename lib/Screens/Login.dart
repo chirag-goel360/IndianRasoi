@@ -14,10 +14,11 @@ class LoginPage extends StatelessWidget {
             child: RotatedBox(
               quarterTurns: 3,
               child: WaveWidget(
+                duration: 1,
                 config: CustomConfig(
                   gradients: [
-                    [Colors.deepPurple, Colors.deepPurple.shade200],
-                    [Colors.indigo.shade200, Colors.purple.shade200],
+                     [Colors.teal, Colors.tealAccent[700]],
+                      [Colors.teal[100], Colors.tealAccent[700]],
                   ],
                   durations: [19440, 10800],
                   heightPercentages: [0.20, 0.25],
