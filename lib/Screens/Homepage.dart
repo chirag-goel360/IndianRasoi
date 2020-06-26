@@ -196,7 +196,7 @@ class _HomePageState extends State<HomePage> {
           title: Text('About Developers'),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DevelopersInfo()));
+                MaterialPageRoute(builder: (context) => Developers()));
           },
         ),
       ],
