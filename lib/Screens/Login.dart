@@ -17,8 +17,8 @@ class LoginPage extends StatelessWidget {
                 duration: 1,
                 config: CustomConfig(
                   gradients: [
-                     [Colors.teal, Colors.tealAccent[700]],
-                      [Colors.teal[100], Colors.tealAccent[700]],
+                    [Colors.teal, Colors.tealAccent[700]],
+                    [Colors.teal[100], Colors.tealAccent[700]],
                   ],
                   durations: [19440, 10800],
                   heightPercentages: [0.20, 0.25],
@@ -126,16 +126,16 @@ class LoginPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text("Don't have an account",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18
-                        ),),
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18
+                          ),),
                         FlatButton(
                           child: Text(
-                              "SignUp",
+                            "SignUp",
                             style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900
                             ),
                           ),
                           textColor: Colors.indigo,

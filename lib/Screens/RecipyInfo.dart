@@ -25,11 +25,11 @@ class _RecipyInfoState extends State<RecipyInfo> {
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
                 title: Text(widget.rec.recipyname,
-                style: TextStyle(
-                  color: Colors.black87,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 background: Image(
                   image: NetworkImage(widget.rec.itemimage,),

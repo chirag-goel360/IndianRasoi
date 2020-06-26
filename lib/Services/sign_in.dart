@@ -12,8 +12,8 @@ Future<String> signInwithGoogle() async{
   final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
 
   final AuthCredential credential = GoogleAuthProvider.getCredential(
-      idToken: googleSignInAuthentication.idToken,
-      accessToken: googleSignInAuthentication.accessToken,
+    idToken: googleSignInAuthentication.idToken,
+    accessToken: googleSignInAuthentication.accessToken,
   );
   final AuthResult authResult = await _auth.signInWithCredential(credential);
   final FirebaseUser user = authResult.user;
@@ -55,7 +55,7 @@ Future <String> facebookLogin() async {
       return 'signInwithFacebook succeeded: $user';
     }
   }
-    catch(e){
+  catch(e){
     print(e);
   }
 }

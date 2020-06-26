@@ -6,7 +6,7 @@ class FoodApi{
   Future<List<Recipy>> getAllRecipy() async{
     return (await Firestore.instance.collection('recipies').getDocuments())
         .documents.
-        map((snapShot) => _fromDocumentSnapshot(snapShot))
+    map((snapShot) => _fromDocumentSnapshot(snapShot))
         .toList();
   }
 

@@ -26,18 +26,18 @@ class RecDesign extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Container(
-            height: 130,
-            width: 200,
-            child:Image(image: NetworkImage(imgURL),
-            fit: BoxFit.cover,alignment: Alignment.center,)
+              height: 130,
+              width: 200,
+              child:Image(image: NetworkImage(imgURL),
+                fit: BoxFit.cover,alignment: Alignment.center,)
           ),
           Container(
             child: FittedBox(
               child: Text(title,
-              style: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.w500,
-              ),
+                style: TextStyle(
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),

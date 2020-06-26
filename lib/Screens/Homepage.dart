@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:indiarasoi/Helpers/LoadDrawer.dart';
 import 'package:indiarasoi/Helpers/RecipeDesign.dart';
 import 'package:indiarasoi/Models/recipy.dart';
@@ -23,6 +24,36 @@ class _HomePageState extends State<HomePage> {
     });
     print(foods.length);
     print(foods.toString());
+  }
+
+  Future<bool> _onBackPressed(){
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+          title: new Text('Are you Sure?'),
+          content: new Text('Do you want to exit Application'),
+          actions: <Widget>[
+            Padding(padding: EdgeInsets.all(15),
+              child: GestureDetector(
+                onTap: () => Navigator.of(context).pop(false),
+                child: Text("NO",
+                  style: TextStyle(
+                      color: Colors.blueAccent
+                  ),),
+              ),),
+            SizedBox(height: 25,),
+            Padding(padding: EdgeInsets.all(15),
+              child: GestureDetector(
+                onTap: () => SystemNavigator.pop(),
+                child: Text("YES",
+                  style: TextStyle(
+                      color: Colors.blueAccent
+                  ),),
+              ),)
+          ],
+        )
+    ) ?? false;
   }
 
   Future<Null> refresh() {
@@ -75,9 +106,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Dessert',
-                          foods: foods,
-                        )));
+                      category: 'Dessert',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -88,9 +119,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Snacks',
-                          foods: foods,
-                        )));
+                      category: 'Snacks',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -101,9 +132,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Main Course',
-                          foods: foods,
-                        )));
+                      category: 'Main Course',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -114,9 +145,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Breakfast',
-                          foods: foods,
-                        )));
+                      category: 'Breakfast',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -127,9 +158,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Lunch',
-                          foods: foods,
-                        )));
+                      category: 'Lunch',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -140,9 +171,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Dinner',
-                          foods: foods,
-                        )));
+                      category: 'Dinner',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -153,9 +184,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'EasyCook',
-                          foods: foods,
-                        )));
+                      category: 'EasyCook',
+                      foods: foods,
+                    )));
           },
         ),
         Divider(
@@ -216,24 +247,27 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Recipes'),
-        centerTitle: true,
-        backgroundColor: Colors.teal,
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(
-                Icons.chat,
-                color: Colors.white,
-              ),
-              onPressed: null)
-        ],
+    return WillPopScope(
+      onWillPop: _onBackPressed,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Recipes'),
+          centerTitle: true,
+          backgroundColor: Colors.teal,
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(
+                  Icons.chat,
+                  color: Colors.white,
+                ),
+                onPressed: null)
+          ],
+        ),
+        drawer: Drawer(
+          child: _getDrawer(context),
+        ),
+        body: _buildBody(context),
       ),
-      drawer: Drawer(
-        child: _getDrawer(context),
-      ),
-      body: _buildBody(context),
     );
   }
 }

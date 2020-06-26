@@ -58,8 +58,8 @@ class signPage extends StatelessWidget {
                         margin: EdgeInsets.only(left: 30, right: 30, top: 30),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(
-                          Radius.circular(40.0),
-                        )),
+                              Radius.circular(40.0),
+                            )),
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
@@ -74,7 +74,7 @@ class signPage extends StatelessWidget {
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(40.0)),
+                                BorderRadius.all(Radius.circular(40.0)),
                               ),
                               contentPadding: EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 16)),
@@ -84,7 +84,7 @@ class signPage extends StatelessWidget {
                         margin: EdgeInsets.only(left: 30, right: 30, top: 30),
                         shape: RoundedRectangleBorder(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(40.0))),
+                            BorderRadius.all(Radius.circular(40.0))),
                         child: TextFormField(
                           keyboardType: TextInputType.visiblePassword,
                           decoration: InputDecoration(
@@ -99,7 +99,7 @@ class signPage extends StatelessWidget {
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none,
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(40))),
+                                  BorderRadius.all(Radius.circular(40))),
                               contentPadding: EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 16.0)),
                         ),
@@ -109,7 +109,7 @@ class signPage extends StatelessWidget {
                         elevation: 11,
                         shape: RoundedRectangleBorder(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(40))),
+                            BorderRadius.all(Radius.circular(40))),
                         child: TextFormField(
                           keyboardType: TextInputType.visiblePassword,
                           decoration: InputDecoration(
@@ -124,7 +124,7 @@ class signPage extends StatelessWidget {
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none,
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(40))),
+                                  BorderRadius.all(Radius.circular(40))),
                               contentPadding: EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 16.0)),
                         ),
@@ -139,7 +139,7 @@ class signPage extends StatelessWidget {
                           elevation: 10,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(40.0))),
+                              BorderRadius.all(Radius.circular(40.0))),
                           child: Text(
                             "SignUp",
                             style: TextStyle(color: Colors.white70),
@@ -185,8 +185,8 @@ class signPage extends StatelessWidget {
                                   facebookLogin().whenComplete(() {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(builder: (context) {
-                                      return LoginPage();
-                                    }));
+                                          return LoginPage();
+                                        }));
                                   });
                                 },
                                 child: Icon(
@@ -216,9 +216,9 @@ class signPage extends StatelessWidget {
                                   signInwithGoogle().whenComplete(() {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(builder: (context) {
-                                      //Open Chat Page here
-                                      return LoginPage();
-                                    }));
+                                          //Open Chat Page here
+                                          return LoginPage();
+                                        }));
                                   });
                                 },
                                 child: Icon(

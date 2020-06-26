@@ -48,9 +48,9 @@ class IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-          child: Container(
+      child: Container(
         decoration: BoxDecoration(
-          gradient: FlutterGradient.cleanMirror()
+            gradient: FlutterGradient.cleanMirror()
         ),
         padding: const EdgeInsets.all(10.0),
         child: new Column(

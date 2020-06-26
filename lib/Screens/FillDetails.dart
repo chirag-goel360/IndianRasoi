@@ -17,10 +17,10 @@ class _fillDetailsState extends State<fillDetails> {
     return Container(
       child: Chip(
         label: Text(label,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 14,
-        ),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+          ),
         ),
         backgroundColor: color,
         elevation: 4,
@@ -34,15 +34,15 @@ class _fillDetailsState extends State<fillDetails> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          gradient:FlutterGradient.cloudyApple(),
+        gradient:FlutterGradient.cloudyApple(),
       ),
       child: Column(
         children: <Widget>[
           Center(child: Text('Nutrition',
             style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              color: Colors.black,
             ),
           )
           ),
@@ -75,10 +75,10 @@ class _fillDetailsState extends State<fillDetails> {
                   lineWidth: 8,
                   percent: widget.rec.protein,
                   center: Text('Protein',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w900,
-                  ),
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                   circularStrokeCap: CircularStrokeCap.round,
                   backgroundColor: Colors.white,
@@ -93,9 +93,9 @@ class _fillDetailsState extends State<fillDetails> {
                   percent: widget.rec.carbohydrates,
                   center: Text('Carb',
                     style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w900,
-                  ),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                   circularStrokeCap: CircularStrokeCap.round,
                   backgroundColor: Colors.white,
@@ -168,39 +168,39 @@ class _fillDetailsState extends State<fillDetails> {
   Widget buildItemsContent(BuildContext context){
     print(widget.rec.steps.length);
     return Container(
-            child: Column(
-              children: <Widget>[
-                 for(int i=0;i<widget.rec.steps.length;i++)
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  color: Colors.white70,
-                  elevation: 5,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                       ListTile(
-                        leading: CircleAvatar(
-                          radius: 20,
-                          child:  Text((i+1).toString()),
-                        ),
-                        title: Text('Step No.'+ (i+1).toString(),
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                        ),
-                        subtitle: Text (widget.rec.steps[i],
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                        ),
+      child: Column(
+        children: <Widget>[
+          for(int i=0;i<widget.rec.steps.length;i++)
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              color: Colors.white70,
+              elevation: 5,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 20,
+                      child:  Text((i+1).toString()),
+                    ),
+                    title: Text('Step No.'+ (i+1).toString(),
+                      style: TextStyle(
+                        color: Colors.black,
                       ),
-                    ],
+                    ),
+                    subtitle: Text (widget.rec.steps[i],
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          );
+        ],
+      ),
+    );
   }
 }
