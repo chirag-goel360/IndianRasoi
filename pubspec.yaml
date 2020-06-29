@@ -36,9 +36,11 @@ dependencies:
   transformer_page_view:
   font_awesome_flutter: ^8.8.1
   wave: ^0.0.8
-  flutter_facebook_login: ^1.1.1
   shared_preferences:
-
+  flutter_facebook_login:
+    git:
+      url: https://github.com/roughike/flutter_facebook_login
+      ref: e69fef3
 dev_dependencies:
   flutter_test:
     sdk: flutter
