@@ -77,7 +77,6 @@ class _LoadDataState extends State<LoadData> {
 
   @override
   Widget build(BuildContext context) {
-    // print(widget.category);
     totalRec();
     return Scaffold(
       appBar: AppBar(

@@ -8,7 +8,7 @@ class IntroScreen extends StatefulWidget {
   IntroScreen(this.onbordingDataList, this.pageRoute);
 
   void skipPage(BuildContext context) {
-    Navigator.push(context, pageRoute);
+    Navigator.pushReplacement(context, pageRoute);
   }
 
   @override
@@ -49,15 +49,13 @@ class IntroScreenState extends State<IntroScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        decoration: BoxDecoration(
-            gradient: FlutterGradient.cleanMirror()
-        ),
+        decoration: BoxDecoration(gradient: FlutterGradient.cleanMirror()),
         padding: const EdgeInsets.all(10.0),
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             new Expanded(
-              flex:5,
+              flex: 5,
               child: new PageView(
                 physics: BouncingScrollPhysics(),
                 children: widget.onbordingDataList,
@@ -80,8 +78,8 @@ class IntroScreenState extends State<IntroScreen> {
                     onPressed: () => lastPage
                         ? null
                         : widget.skipPage(
-                      context,
-                    ),
+                            context,
+                          ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -104,8 +102,8 @@ class IntroScreenState extends State<IntroScreen> {
                     onPressed: () => lastPage
                         ? widget.skipPage(context)
                         : controller.nextPage(
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.easeIn),
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeIn),
                   ),
                 ],
               ),
