@@ -7,6 +7,7 @@ import 'package:indiarasoi/Models/recipy.dart';
 import 'package:indiarasoi/Routes/route.dart';
 import 'package:indiarasoi/Screens/Developers.dart';
 import 'package:indiarasoi/Screens/RecipyInfo.dart';
+import 'package:indiarasoi/Screens/stories.dart';
 import 'package:indiarasoi/Services/FoodApi.dart';
 
 class HomePage extends StatefulWidget {
@@ -211,6 +212,16 @@ class _HomePageState extends State<HomePage> {
                           category: 'EasyCook',
                           foods: foods,
                         )));
+          },
+        ),
+         ListTile(
+          title: Text('Our Weekly Stories'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => OurStories()));
           },
         ),
         Divider(
