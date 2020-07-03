@@ -11,7 +11,6 @@ class fillDetails extends StatefulWidget {
 }
 
 class _fillDetailsState extends State<fillDetails> {
-
   Widget chips(String label,Color color)
   {
     return Container(

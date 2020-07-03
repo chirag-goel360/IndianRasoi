@@ -46,38 +46,38 @@ class _HomePageState extends State<HomePage> {
 
   Future<bool> _onBackPressed() {
     return showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0)),
-                  title: new Text('Are you Sure?'),
-                  content: new Text('Do you want to exit Application'),
-                  actions: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: GestureDetector(
-                        onTap: () => Navigator.of(context).pop(),
-                        child: Text(
-                          "NO",
-                          style: TextStyle(color: Colors.blueAccent),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15),
-                      child: GestureDetector(
-                        onTap: () => SystemNavigator.pop(),
-                        child: Text(
-                          "YES",
-                          style: TextStyle(color: Colors.blueAccent),
-                        ),
-                      ),
-                    )
-                  ],
-                )) ??
+        context: context,
+        builder: (context) => AlertDialog(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0)),
+          title: new Text('Are you Sure?'),
+          content: new Text('Do you want to exit Application'),
+          actions: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: GestureDetector(
+                onTap: () => Navigator.of(context).pop(),
+                child: Text(
+                  "NO",
+                  style: TextStyle(color: Colors.blueAccent),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: GestureDetector(
+                onTap: () => SystemNavigator.pop(),
+                child: Text(
+                  "YES",
+                  style: TextStyle(color: Colors.blueAccent),
+                ),
+              ),
+            )
+          ],
+        )) ??
         false;
   }
 
@@ -131,9 +131,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Dessert',
-                          foods: foods,
-                        )));
+                      category: 'Dessert',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -144,9 +144,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Snacks',
-                          foods: foods,
-                        )));
+                      category: 'Snacks',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -157,9 +157,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Main Course',
-                          foods: foods,
-                        )));
+                      category: 'Main Course',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -170,9 +170,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Breakfast',
-                          foods: foods,
-                        )));
+                      category: 'Breakfast',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -183,9 +183,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Lunch',
-                          foods: foods,
-                        )));
+                      category: 'Lunch',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -196,9 +196,9 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'Dinner',
-                          foods: foods,
-                        )));
+                      category: 'Dinner',
+                      foods: foods,
+                    )));
           },
         ),
         ListTile(
@@ -209,12 +209,12 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                     builder: (context) => LoadData(
-                          category: 'EasyCook',
-                          foods: foods,
-                        )));
+                      category: 'EasyCook',
+                      foods: foods,
+                    )));
           },
         ),
-         ListTile(
+        ListTile(
           title: Text('Our Weekly Stories'),
           onTap: () {
             Navigator.pop(context);
@@ -241,12 +241,10 @@ class _HomePageState extends State<HomePage> {
   Widget _buildBody(BuildContext context) {
     return new Container(
       color: Colors.white70,
-      // margin: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
       child: new Column(
         children: <Widget>[
           Container(
             height: 70.0,
-            // color: Colors.teal,
             decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.only(
@@ -259,13 +257,13 @@ class _HomePageState extends State<HomePage> {
                       horizontal: 15.0, vertical: 10.0),
                   child: Container(
                       padding:
-                          EdgeInsets.only(top: 1.0, left: 5.0, right: 10.0),
+                      EdgeInsets.only(top: 1.0, left: 5.0, right: 10.0),
                       height: 50.0,
                       width: MediaQuery.of(context).size.width - 10,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius:
-                              BorderRadius.all(Radius.circular(40.0))),
+                          BorderRadius.all(Radius.circular(40.0))),
                       child: TextField(
                         autofocus: false,
                         focusNode: FocusNode(canRequestFocus: false),
@@ -275,13 +273,13 @@ class _HomePageState extends State<HomePage> {
                         decoration: InputDecoration(
                             disabledBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.transparent)),
+                                BorderSide(color: Colors.transparent)),
                             enabledBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.transparent)),
+                                BorderSide(color: Colors.transparent)),
                             focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.transparent)),
+                                BorderSide(color: Colors.transparent)),
                             contentPadding: EdgeInsets.all(12.0),
                             prefixIcon: Icon(
                               Icons.search,
@@ -294,7 +292,8 @@ class _HomePageState extends State<HomePage> {
                             searchRecipy(value);
                           });
                         },
-                      )),
+                      )
+                  ),
                 ),
               ],
             ),
@@ -351,7 +350,8 @@ class _HomePageState extends State<HomePage> {
                   Icons.chat,
                   color: Colors.white,
                 ),
-                onPressed: null)
+                onPressed: null
+            )
           ],
         ),
         drawer: Drawer(

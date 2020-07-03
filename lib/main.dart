@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:indiarasoi/Helpers/splashscreen.dart';
-import 'package:indiarasoi/Screens/Homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +14,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: SafeArea(child: SplashScreen(),),
+      home: SafeArea(
+        child: SplashScreen(),
+      ),
     );
   }
 }

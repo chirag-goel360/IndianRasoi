@@ -52,14 +52,16 @@ class signPage extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.deepPurple[800],
                             fontWeight: FontWeight.bold,
-                            fontSize: 26.0),
+                            fontSize: 26.0
+                        ),
                       ),
                       Card(
                         margin: EdgeInsets.only(left: 30, right: 30, top: 30),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(40.0),
-                            )),
+                            )
+                        ),
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
@@ -77,7 +79,9 @@ class signPage extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(40.0)),
                               ),
                               contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 16)),
+                                  horizontal: 20, vertical: 16
+                              )
+                          ),
                         ),
                       ),
                       Card(

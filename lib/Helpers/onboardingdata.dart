@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gradients/flutter_gradients.dart';
 
 class OnbordingData extends StatefulWidget {
   final String imagePath;
@@ -44,7 +43,9 @@ class _OnbordingDataState extends State<OnbordingData> {
                         text: desc,
                         style: TextStyle(color: Colors.black, fontSize: 22.0),
                       )
-                    ]))
+                    ]
+                )
+            )
           ],
         ),
       ),

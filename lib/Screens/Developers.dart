@@ -55,16 +55,16 @@ class _DevelopersState extends State<Developers> {
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius:
-                                          BorderRadius.circular(10.0)),
+                                      BorderRadius.circular(10.0)),
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Container(
                                         margin: EdgeInsets.only(left: 95.0),
                                         child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: <Widget>[
                                             Text(
                                               "Ritik Miglani",
@@ -158,112 +158,113 @@ class _DevelopersState extends State<Developers> {
               margin: EdgeInsets.all(24),
               child: Center(
                   child: SingleChildScrollView(
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-                      child: Column(
-                        children: <Widget>[
-                          Stack(
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+                          child: Column(
                             children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.all(16.0),
-                                margin: EdgeInsets.only(top: 16.0),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10.0)),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.only(left: 95.0),
-                                      child: Column(
-                                        crossAxisAlignment:
+                              Stack(
+                                children: <Widget>[
+                                  Container(
+                                    padding: EdgeInsets.all(16.0),
+                                    margin: EdgeInsets.only(top: 16.0),
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10.0)),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Container(
+                                          margin: EdgeInsets.only(left: 95.0),
+                                          child: Column(
+                                            crossAxisAlignment:
                                             CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            "Chirag Goel",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .title,
+                                            children: <Widget>[
+                                              Text(
+                                                "Chirag Goel",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .title,
+                                              ),
+                                              ListTile(
+                                                contentPadding: EdgeInsets.all(0),
+                                                title: Text("Student"),
+                                                subtitle: Text("Delhi"),
+                                              ),
+                                            ],
                                           ),
-                                          ListTile(
-                                            contentPadding: EdgeInsets.all(0),
-                                            title: Text("Student"),
-                                            subtitle: Text("Delhi"),
-                                          ),
-                                        ],
-                                      ),
+                                        ),
+                                        SizedBox(height: 10.0),
+                                      ],
                                     ),
-                                    SizedBox(height: 10.0),
+                                  ),
+                                  Container(
+                                    height: 80,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        border: Border.all(width: 1),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                        image: DecorationImage(
+                                          image: NetworkImage(
+                                              'https://media-exp1.licdn.com/dms/image/C5603AQHHKaG64F47Aw/profile-displayphoto-shrink_400_400/0?e=1598486400&v=beta&t=S-KAzE6K--vKS6cn6pg_Knd9JlXR0hfzG1Iuv5X4668'),
+                                          fit: BoxFit.cover,
+                                        )),
+                                    margin: EdgeInsets.only(left: 16.0),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10.0),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                child: Column(
+                                  children: <Widget>[
+                                    ListTile(
+                                      title: Text("Developer Information"),
+                                    ),
+                                    Divider(),
+                                    ListTile(
+                                      title: Text("Email"),
+                                      subtitle: Text("chirag.goel360@gmail.com"),
+                                      leading: Icon(Icons.email),
+                                    ),
+                                    ListTile(
+                                      title: Text("Phone"),
+                                      subtitle: Text("+91-9818496835"),
+                                      leading: Icon(Icons.phone),
+                                    ),
+                                    ListTile(
+                                      title: Text("LinkedIn"),
+                                      subtitle: GestureDetector(
+                                        onTap: () {
+                                          _launchID(
+                                              "https://www.linkedin.com/in/chirag-goel-06b804148/");
+                                        },
+                                        child: Text(
+                                            "https://www.linkedin.com/in/chirag-goel-06b804148/"),
+                                      ),
+                                      leading: Icon(Icons.web),
+                                    ),
+                                    ListTile(
+                                      title: Text("About"),
+                                      subtitle: Text(
+                                          "Experienced Android Developer with a demonstrated history of working in the health wellness and fitness industry. Skilled in Java, Algorithms, Flutter, Cascading Style Sheets (CSS), and C (Programming Language). Strong engineering professional with a Bachelor of Technology - BTech focused in Computer Science from Amity School of Engineering & Technology."),
+                                      leading: Icon(Icons.person),
+                                    ),
                                   ],
                                 ),
-                              ),
-                              Container(
-                                height: 80,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    border: Border.all(width: 1),
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          'https://media-exp1.licdn.com/dms/image/C5603AQHHKaG64F47Aw/profile-displayphoto-shrink_400_400/0?e=1598486400&v=beta&t=S-KAzE6K--vKS6cn6pg_Knd9JlXR0hfzG1Iuv5X4668'),
-                                      fit: BoxFit.cover,
-                                    )),
-                                margin: EdgeInsets.only(left: 16.0),
-                              ),
+                              )
                             ],
                           ),
-                          SizedBox(height: 10.0),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            child: Column(
-                              children: <Widget>[
-                                ListTile(
-                                  title: Text("Developer Information"),
-                                ),
-                                Divider(),
-                                ListTile(
-                                  title: Text("Email"),
-                                  subtitle: Text("chirag.goel360@gmail.com"),
-                                  leading: Icon(Icons.email),
-                                ),
-                                ListTile(
-                                  title: Text("Phone"),
-                                  subtitle: Text("+91-9818496835"),
-                                  leading: Icon(Icons.phone),
-                                ),
-                                ListTile(
-                                  title: Text("LinkedIn"),
-                                  subtitle: GestureDetector(
-                                    onTap: () {
-                                      _launchID(
-                                          "https://www.linkedin.com/in/chirag-goel-06b804148/");
-                                    },
-                                    child: Text(
-                                        "https://www.linkedin.com/in/chirag-goel-06b804148/"),
-                                  ),
-                                  leading: Icon(Icons.web),
-                                ),
-                                ListTile(
-                                  title: Text("About"),
-                                  subtitle: Text(
-                                      "Experienced Android Developer with a demonstrated history of working in the health wellness and fitness industry. Skilled in Java, Algorithms, Flutter, Cascading Style Sheets (CSS), and C (Programming Language). Strong engineering professional with a Bachelor of Technology - BTech focused in Computer Science from Amity School of Engineering & Technology."),
-                                  leading: Icon(Icons.person),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              )),
+                  )
+              ),
             ),
           )
         ],
