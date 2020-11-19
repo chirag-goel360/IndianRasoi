@@ -8,6 +8,7 @@ class LoadData extends StatefulWidget {
   final String category;
   final List<Recipy> foods;
   LoadData({this.category, this.foods});
+
   @override
   _LoadDataState createState() => _LoadDataState();
 }
@@ -15,22 +16,30 @@ class LoadData extends StatefulWidget {
 class _LoadDataState extends State<LoadData> {
   int count = 0;
   List<Recipy> items = [];
+
   _navigateToDetails(Recipy rec) {
     Navigator.of(context).push(
-      new FadePageRoute(
+      FadePageRoute(
         builder: (c) {
-          return new RecipyInfo(rec);
+          return RecipyInfo(
+            rec,
+          );
         },
-        settings: new RouteSettings(),
+        settings: RouteSettings(),
       ),
     );
   }
 
   Widget _buildBody(BuildContext context) {
-    return new Container(
+    return Container(
       color: Colors.white70,
-      margin: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
-      child: new Column(
+      margin: EdgeInsets.fromLTRB(
+        8.0,
+        0.0,
+        8.0,
+        0.0,
+      ),
+      child: Column(
         children: <Widget>[
           _getListViewWidget(context),
         ],
@@ -45,8 +54,11 @@ class _LoadDataState extends State<LoadData> {
         primary: false,
         itemCount: items.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
-        padding: const EdgeInsets.all(10.0),
+          crossAxisCount: 2,
+          mainAxisSpacing: 15,
+          crossAxisSpacing: 15,
+        ),
+        padding: EdgeInsets.all(10.0),
         itemBuilder: _buildItems,
       ),
     );
@@ -56,11 +68,12 @@ class _LoadDataState extends State<LoadData> {
     Recipy rec = items[index];
     return GridTile(
       child: GestureDetector(
-          onTap: () => _navigateToDetails(rec),
-          child: RecDesign(
-            title: rec.recipyname,
-            imgURL: rec.itemimage,
-          )),
+        onTap: () => _navigateToDetails(rec),
+        child: RecDesign(
+          title: rec.recipyname,
+          imgURL: rec.itemimage,
+        ),
+      ),
     );
   }
 
@@ -80,20 +93,26 @@ class _LoadDataState extends State<LoadData> {
     totalRec();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipes'),
+        title: Text(
+          'Recipes',
+        ),
         centerTitle: true,
         backgroundColor: Colors.teal,
         actions: <Widget>[
           IconButton(
-              icon: Icon(
-                Icons.chat,
-                color: Colors.white,
-              ),
-              onPressed: null)
+            icon: Icon(
+              Icons.chat,
+              color: Colors.white,
+            ),
+            onPressed: null,
+          ),
         ],
         leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios),
-            onPressed: () => Navigator.pop(context)),
+          icon: Icon(
+            Icons.arrow_back_ios,
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: _buildBody(context),
     );

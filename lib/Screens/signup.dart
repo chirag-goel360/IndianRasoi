@@ -22,12 +22,21 @@ class signPage extends StatelessWidget {
                   duration: 1,
                   config: CustomConfig(
                     gradients: [
-                      [Colors.teal, Colors.teal[200]],
-                      [Colors.teal[100], Colors.tealAccent],
+                      [
+                        Colors.teal,
+                        Colors.teal[200],
+                      ],
+                      [
+                        Colors.teal[100],
+                        Colors.tealAccent,
+                      ],
                     ],
                     durations: [19440, 10800],
                     heightPercentages: [0.20, 0.25],
-                    blur: MaskFilter.blur(BlurStyle.solid, 10),
+                    blur: MaskFilter.blur(
+                      BlurStyle.solid,
+                      10,
+                    ),
                     gradientBegin: Alignment.bottomLeft,
                     gradientEnd: Alignment.topRight,
                   ),
@@ -50,103 +59,144 @@ class signPage extends StatelessWidget {
                         "Sign Up with Indian Rasoi",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.deepPurple[800],
-                            fontWeight: FontWeight.bold,
-                            fontSize: 26.0
+                          color: Colors.deepPurple[800],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 26,
                         ),
                       ),
                       Card(
-                        margin: EdgeInsets.only(left: 30, right: 30, top: 30),
+                        margin: EdgeInsets.only(
+                          left: 30,
+                          right: 30,
+                          top: 30,
+                        ),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(40.0),
-                            )
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(40.0),
+                          ),
                         ),
                         child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.person,
-                                color: Colors.teal,
+                            prefixIcon: Icon(
+                              Icons.person,
+                              color: Colors.teal,
+                            ),
+                            hintText: "Email Address",
+                            hintStyle: TextStyle(
+                              color: Colors.black54,
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius:BorderRadius.all(
+                                Radius.circular(40.0),
                               ),
-                              hintText: "Email Address",
-                              hintStyle: TextStyle(color: Colors.black54),
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(40.0)),
-                              ),
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 16
-                              )
+                            ),
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 16,
+                            ),
                           ),
                         ),
                       ),
                       Card(
-                        margin: EdgeInsets.only(left: 30, right: 30, top: 30),
+                        margin: EdgeInsets.only(
+                          left: 30,
+                          right: 30,
+                          top: 30,
+                        ),
                         shape: RoundedRectangleBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(40.0))),
+                          borderRadius:BorderRadius.all(
+                            Radius.circular(40.0),
+                          ),
+                        ),
                         child: TextFormField(
                           keyboardType: TextInputType.visiblePassword,
                           decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.lock,
-                                color: Colors.teal,
+                            prefixIcon: Icon(
+                              Icons.lock,
+                              color: Colors.teal,
+                            ),
+                            hintText: "Password",
+                            hintStyle: TextStyle(
+                              color: Colors.black54,
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius:BorderRadius.all(
+                                Radius.circular(40),
                               ),
-                              hintText: "Password",
-                              hintStyle: TextStyle(color: Colors.black54),
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(40))),
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 20.0, vertical: 16.0)),
+                            ),
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 20.0,
+                              vertical: 16.0,
+                            ),
+                          ),
                         ),
                       ),
                       Card(
-                        margin: EdgeInsets.only(left: 30, right: 30, top: 30),
+                        margin: EdgeInsets.only(
+                          left: 30,
+                          right: 30,
+                          top: 30,
+                        ),
                         elevation: 11,
                         shape: RoundedRectangleBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(40))),
+                          borderRadius:BorderRadius.all(
+                            Radius.circular(40),
+                          ),
+                        ),
                         child: TextFormField(
                           keyboardType: TextInputType.visiblePassword,
                           decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.lock_open,
-                                color: Colors.teal,
+                            prefixIcon: Icon(
+                              Icons.lock_open,
+                              color: Colors.teal,
+                            ),
+                            hintText: "Confirm Password",
+                            hintStyle: TextStyle(
+                              color: Colors.black54,
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius:BorderRadius.all(
+                                Radius.circular(40),
                               ),
-                              hintText: "Confirm Password",
-                              hintStyle: TextStyle(color: Colors.black54),
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(40))),
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 20.0, vertical: 16.0)),
+                            ),
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 20.0,
+                              vertical: 16.0,
+                            ),
+                          ),
                         ),
                       ),
                       Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(30.0),
                         child: RaisedButton(
-                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                          padding: EdgeInsets.symmetric(
+                            vertical: 16.0,
+                          ),
                           color: Colors.pink.shade600,
-                          onPressed: () {},
+                          onPressed: () {
+                          },
                           elevation: 10,
                           shape: RoundedRectangleBorder(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(40.0))),
+                            borderRadius:BorderRadius.all(
+                              Radius.circular(40.0),
+                            ),
+                          ),
                           child: Text(
                             "SignUp",
-                            style: TextStyle(color: Colors.white70),
+                            style: TextStyle(
+                              color: Colors.white70,
+                            ),
                           ),
                         ),
                       ),
@@ -161,7 +211,9 @@ class signPage extends StatelessWidget {
                       Text(
                         "or, connect with",
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w500),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                       SizedBox(
                         height: 15.0,
@@ -178,19 +230,23 @@ class signPage extends StatelessWidget {
                               height: 60,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                gradient: LinearGradient(colors: [
-                                  Color(0xff3b5998),
-                                  Colors.blueAccent
-                                ], tileMode: TileMode.clamp),
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color(0xff3b5998),
+                                    Colors.blueAccent,
+                                  ],
+                                  tileMode: TileMode.clamp,
+                                ),
                               ),
                               child: RawMaterialButton(
                                 shape: CircleBorder(),
                                 onPressed: () {
                                   facebookLogin().whenComplete(() {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (context) {
-                                          return LoginPage();
-                                        }));
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                                      return LoginPage();
+                                    },
+                                    ),
+                                    );
                                   });
                                 },
                                 child: Icon(
@@ -209,20 +265,24 @@ class signPage extends StatelessWidget {
                               height: 60,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                gradient: LinearGradient(colors: [
-                                  Colors.red.shade300,
-                                  Colors.red.shade900
-                                ], tileMode: TileMode.clamp),
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Colors.red.shade300,
+                                    Colors.red.shade900,
+                                  ],
+                                  tileMode: TileMode.clamp,
+                                ),
                               ),
                               child: RawMaterialButton(
                                 shape: CircleBorder(),
                                 onPressed: () {
                                   signInwithGoogle().whenComplete(() {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (context) {
-                                          //Open Chat Page here
-                                          return LoginPage();
-                                        }));
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                                      //Open Chat Page here
+                                      return LoginPage();
+                                    },
+                                    ),
+                                    );
                                   });
                                 },
                                 child: Icon(
@@ -243,30 +303,35 @@ class signPage extends StatelessWidget {
                           Text(
                             "Already have an account",
                             style: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 18),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                            ),
                           ),
                           FlatButton(
                             child: Text(
                               "Login",
                               style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.w900),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
                             textColor: Colors.indigo,
                             onPressed: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                                 //Open Chat Page here
                                 return LoginPage();
-                              }));
+                              },
+                              ),
+                              );
                             },
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -5,6 +5,7 @@ import 'package:indiarasoi/Screens/FillDetails.dart';
 class RecipyInfo extends StatefulWidget {
   final Recipy rec;
   RecipyInfo(this.rec);
+
   @override
   _RecipyInfoState createState() => _RecipyInfoState();
 }
@@ -24,7 +25,8 @@ class _RecipyInfoState extends State<RecipyInfo> {
               expandedHeight: 200,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                title: Text(widget.rec.recipyname,
+                title: Text(
+                  widget.rec.recipyname,
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 20.0,
@@ -32,7 +34,9 @@ class _RecipyInfoState extends State<RecipyInfo> {
                   ),
                 ),
                 background: Image(
-                  image: NetworkImage(widget.rec.itemimage,),
+                  image: NetworkImage(
+                    widget.rec.itemimage,
+                  ),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -40,10 +44,12 @@ class _RecipyInfoState extends State<RecipyInfo> {
             SliverList(
               delegate: SliverChildBuilderDelegate((BuildContext context,int index){
                 if(index>=1) return null;
-                return fillDetails(widget.rec);
-              }
+                return fillDetails(
+                  widget.rec,
+                );
+              },
               ),
-            )
+            ),
           ],
         ),
       ),

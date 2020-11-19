@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:indiarasoi/Helpers/splashscreen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {

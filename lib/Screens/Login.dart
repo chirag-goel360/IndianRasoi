@@ -17,12 +17,20 @@ class LoginPage extends StatelessWidget {
                 duration: 1,
                 config: CustomConfig(
                   gradients: [
-                    [Colors.teal, Colors.tealAccent[700]],
-                    [Colors.teal[100], Colors.tealAccent[700]],
+                    [
+                      Colors.teal,
+                      Colors.tealAccent[700],
+                    ],
+                    [Colors.teal[100],
+                      Colors.tealAccent[700],
+                    ],
                   ],
                   durations: [19440, 10800],
                   heightPercentages: [0.20, 0.25],
-                  blur: MaskFilter.blur(BlurStyle.solid, 10),
+                  blur: MaskFilter.blur(
+                    BlurStyle.solid,
+                    10,
+                  ),
                   gradientBegin: Alignment.bottomLeft,
                   gradientEnd: Alignment.topRight,
                 ),
@@ -44,54 +52,82 @@ class LoginPage extends StatelessWidget {
                     Text("Login",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 26.0
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 26.0,
                       ),
                     ),
                     Card(
-                      margin: EdgeInsets.only(left: 30,right: 30,top: 30),
+                      margin: EdgeInsets.only(
+                        left: 30,
+                        right: 30,
+                        top: 30,
+                      ),
                       elevation: 11,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(40))
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(40),
+                        ),
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person,color: Colors.teal,),
-                            hintText: "Email Address",
-                            hintStyle: TextStyle(
-                                color: Colors.black54
+                          prefixIcon: Icon(
+                            Icons.person,
+                            color: Colors.teal,
+                          ),
+                          hintText: "Email Address",
+                          hintStyle: TextStyle(
+                            color: Colors.black54,
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(40.0),
                             ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0)
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                            vertical: 16.0,
+                          ),
                         ),
                       ),
                     ),
                     Card(
-                      margin: EdgeInsets.only(left: 30, right: 30, top: 30),
+                      margin: EdgeInsets.only(
+                        left: 30,
+                        right: 30,
+                        top: 30,
+                      ),
                       elevation: 11,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(40))
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(40),
+                        ),
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock, color: Colors.teal,),
-                            hintText: "Password",
-                            hintStyle: TextStyle(
-                                color: Colors.black54
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Colors.teal,
+                          ),
+                          hintText: "Password",
+                          hintStyle: TextStyle(
+                            color: Colors.black54,
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(40),
                             ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius: BorderRadius.all(Radius.circular(40))
-                            ),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0)
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                            vertical: 16.0,
+                          ),
                         ),
                       ),
                     ),
@@ -99,18 +135,23 @@ class LoginPage extends StatelessWidget {
                       width: double.infinity,
                       padding: EdgeInsets.all(30.0),
                       child: RaisedButton(
-                        padding: EdgeInsets.symmetric(vertical: 16.0),
+                        padding: EdgeInsets.symmetric(
+                          vertical: 16.0,
+                        ),
                         color: Colors.pink,
                         onPressed: (){
-
                         },
                         elevation: 11,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(40.0))
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(40.0),
+                          ),
                         ),
-                        child: Text("Login",style: TextStyle(
-                            color: Colors.white70
-                        ),
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
                         ),
                       ),
                     ),
@@ -125,31 +166,32 @@ class LoginPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text("Don't have an account",
+                        Text(
+                          "Don't have an account",
                           style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18
-                          ),),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                          ),
+                        ),
                         FlatButton(
                           child: Text(
                             "SignUp",
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
                             ),
                           ),
                           textColor: Colors.indigo,
                           onPressed: (){
-
                           },
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

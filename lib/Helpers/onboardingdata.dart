@@ -4,12 +4,10 @@ class OnbordingData extends StatefulWidget {
   final String imagePath;
   final String title;
   final String desc;
-
   OnbordingData({this.imagePath, this.title, this.desc});
 
   @override
-  _OnbordingDataState createState() =>
-      _OnbordingDataState(this.imagePath, this.title, this.desc);
+  _OnbordingDataState createState() => _OnbordingDataState(this.imagePath, this.title, this.desc);
 }
 
 class _OnbordingDataState extends State<OnbordingData> {
@@ -31,21 +29,30 @@ class _OnbordingDataState extends State<OnbordingData> {
               fit: BoxFit.fitWidth,
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.40,
-              image: AssetImage(imagePath),
+              image: AssetImage(
+                imagePath,
+              ),
             ),
             RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                    text: title + "\n\n",
-                    style: TextStyle(color: Colors.teal[500], fontSize: 40.0, fontWeight: FontWeight.bold),
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: desc,
-                        style: TextStyle(color: Colors.black, fontSize: 22.0),
-                      )
-                    ]
-                )
-            )
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                text: title + "\n\n",
+                style: TextStyle(
+                  color: Colors.teal[500],
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold,
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: desc,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

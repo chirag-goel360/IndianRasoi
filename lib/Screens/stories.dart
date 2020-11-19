@@ -8,13 +8,13 @@ class Screen extends StatelessWidget {
       body: Container(
         color: Colors.deepPurpleAccent,
         child: Center(
-            child: Text(
-              'Yellow',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.deepOrange
-              ),
-            )
+          child: Text(
+            'Yellow',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.deepOrange,
+            ),
+          ),
         ),
       ),
     );
@@ -29,39 +29,45 @@ class OurStories extends StatefulWidget {
 class _OurStoriesState extends State<OurStories> {
   _onClickStories(){
     Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => InstagramStorySwipe(
-            children: <Widget>[
-              Screen(),
-              Screen(),
-            ],
-          ),
-        )
+      context,
+      MaterialPageRoute(
+        builder: (context) => InstagramStorySwipe(
+          children: <Widget>[
+            Screen(),
+            Screen(),
+          ],
+        ),
+      ),
     );
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('This week Stories'),
+        title: Text(
+          'This week Stories',
+        ),
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30),
+        margin: EdgeInsets.symmetric(
+          horizontal: 30,
+        ),
         child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(height: 16),
-                RaisedButton(
-                  onPressed: _onClickStories,
-                  child: Text(
-                    'Story Swipe',
-                    textAlign: TextAlign.center,
-                  ),
-                )
-              ],
-            )
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height: 16,
+              ),
+              RaisedButton(
+                onPressed: _onClickStories,
+                child: Text(
+                  'Story Swipe',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

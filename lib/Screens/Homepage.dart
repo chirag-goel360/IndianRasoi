@@ -33,57 +33,65 @@ class _HomePageState extends State<HomePage> {
   List<Recipy> filteredList = [];
   void searchRecipy(String name) {
     print(foods);
-    print(foods
-        .where((foodName) => foodName.recipyname.toLowerCase().startsWith(name))
-        .toList());
+    print(foods.where((foodName) => foodName.recipyname.toLowerCase().startsWith(name))
+        .toList(),
+    );
     setState(() {
-      filteredList = foods
-          .where(
-              (foodName) => foodName.recipyname.toLowerCase().startsWith(name))
+      filteredList = foods.where((foodName) => foodName.recipyname.toLowerCase().startsWith(name))
           .toList();
     });
   }
 
   Future<bool> _onBackPressed() {
     return showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.0)),
-          title: new Text('Are you Sure?'),
-          content: new Text('Do you want to exit Application'),
-          actions: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: GestureDetector(
-                onTap: () => Navigator.of(context).pop(),
-                child: Text(
-                  "NO",
-                  style: TextStyle(color: Colors.blueAccent),
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        title: Text(
+          'Are you Sure?',
+        ),
+        content: Text(
+          'Do you want to exit Application',
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(15),
+            child: GestureDetector(
+              onTap: () => Navigator.of(context).pop(),
+              child: Text(
+                "NO",
+                style: TextStyle(
+                  color: Colors.blueAccent,
                 ),
               ),
             ),
-            SizedBox(
-              height: 25,
-            ),
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: GestureDetector(
-                onTap: () => SystemNavigator.pop(),
-                child: Text(
-                  "YES",
-                  style: TextStyle(color: Colors.blueAccent),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Padding(
+            padding: EdgeInsets.all(15),
+            child: GestureDetector(
+              onTap: () => SystemNavigator.pop(),
+              child: Text(
+                "YES",
+                style: TextStyle(
+                  color: Colors.blueAccent,
                 ),
               ),
-            )
-          ],
-        )) ??
+            ),
+          ),
+        ],
+      ),
+    ) ??
         false;
   }
 
   Future<Null> refresh() {
     _loadFood();
-    return new Future<Null>.value();
+    return Future<Null>.value();
   }
 
   void initState() {
@@ -93,11 +101,13 @@ class _HomePageState extends State<HomePage> {
 
   _navigateToDetails(Recipy rec) {
     Navigator.of(context).push(
-      new FadePageRoute(
+      FadePageRoute(
         builder: (c) {
-          return new RecipyInfo(rec);
+          return RecipyInfo(
+            rec,
+          );
         },
-        settings: new RouteSettings(),
+        settings: RouteSettings(),
       ),
     );
   }
@@ -111,127 +121,152 @@ class _HomePageState extends State<HomePage> {
             image: DecorationImage(
               fit: BoxFit.fill,
               image: NetworkImage(
-                  'https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2017/08/foodie-apps1.jpg'),
+                'https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2017/08/foodie-apps1.jpg',
+              ),
             ),
           ),
           child: Center(
             child: Container(
               child: Text(
                 'IndianRasoi',
-                style: TextStyle(fontSize: 45.0, color: Colors.black),
+                style: TextStyle(
+                  fontSize: 45.0,
+                  color: Colors.black,
+                ),
               ),
             ),
           ),
         ),
         ListTile(
-          title: Text('Desserts'),
+          title: Text(
+            'Desserts',
+          ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => LoadData(
-                      category: 'Dessert',
-                      foods: foods,
-                    )));
+            Navigator.push(context,MaterialPageRoute(
+              builder: (context) => LoadData(
+                category: 'Dessert',
+                foods: foods,
+              ),
+            ),
+            );
           },
         ),
         ListTile(
-          title: Text('Snacks'),
+          title: Text(
+            'Snacks',
+          ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => LoadData(
-                      category: 'Snacks',
-                      foods: foods,
-                    )));
+            Navigator.push(context,MaterialPageRoute(
+              builder: (context) => LoadData(
+                category: 'Snacks',
+                foods: foods,
+              ),
+            ),
+            );
           },
         ),
         ListTile(
-          title: Text('Main Course'),
+          title: Text(
+            'Main Course',
+          ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => LoadData(
-                      category: 'Main Course',
-                      foods: foods,
-                    )));
+            Navigator.push(context,MaterialPageRoute(
+              builder: (context) => LoadData(
+                category: 'Main Course',
+                foods: foods,
+              ),
+            ),
+            );
           },
         ),
         ListTile(
-          title: Text('Breakfast'),
+          title: Text(
+            'Breakfast',
+          ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => LoadData(
-                      category: 'Breakfast',
-                      foods: foods,
-                    )));
+            Navigator.push(context,MaterialPageRoute(
+              builder: (context) => LoadData(
+                category: 'Breakfast',
+                foods: foods,
+              ),
+            ),
+            );
           },
         ),
         ListTile(
-          title: Text('Lunch'),
+          title: Text(
+            'Lunch',
+          ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => LoadData(
-                      category: 'Lunch',
-                      foods: foods,
-                    )));
+            Navigator.push(context,MaterialPageRoute(
+              builder: (context) => LoadData(
+                category: 'Lunch',
+                foods: foods,
+              ),
+            ),
+            );
           },
         ),
         ListTile(
-          title: Text('Dinner'),
+          title: Text(
+            'Dinner',
+          ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => LoadData(
-                      category: 'Dinner',
-                      foods: foods,
-                    )));
+            Navigator.push(context,MaterialPageRoute(
+              builder: (context) => LoadData(
+                category: 'Dinner',
+                foods: foods,
+              ),
+            ),
+            );
           },
         ),
         ListTile(
-          title: Text('EasyCook'),
+          title: Text(
+            'EasyCook',
+          ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => LoadData(
-                      category: 'EasyCook',
-                      foods: foods,
-                    )));
+            Navigator.push(context,MaterialPageRoute(
+              builder: (context) => LoadData(
+                category: 'EasyCook',
+                foods: foods,
+              ),
+            ),
+            );
           },
         ),
         ListTile(
-          title: Text('Our Weekly Stories'),
+          title: Text(
+            'Our Weekly Stories',
+          ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => OurStories()));
+            Navigator.push(context,MaterialPageRoute(
+              builder: (context) => OurStories(),
+            ),
+            );
           },
         ),
         Divider(
           color: Colors.black,
         ),
         ListTile(
-          title: Text('About Developers'),
+          title: Text(
+            'About Developers',
+          ),
           onTap: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Developers()));
+              context,MaterialPageRoute(
+              builder: (context) => Developers(),
+            ),
+            );
           },
         ),
       ],
@@ -239,60 +274,82 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildBody(BuildContext context) {
-    return new Container(
+    return Container(
       color: Colors.white70,
-      child: new Column(
+      child: Column(
         children: <Widget>[
           Container(
             height: 70.0,
             decoration: BoxDecoration(
-                color: Colors.teal,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(35.0),
-                    bottomRight: Radius.circular(35.0))),
+              color: Colors.teal,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(35.0),
+                bottomRight: Radius.circular(35.0),
+              ),
+            ),
             child: Stack(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 15.0, vertical: 10.0),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 15.0,
+                    vertical: 10.0,
+                  ),
                   child: Container(
-                      padding:
-                      EdgeInsets.only(top: 1.0, left: 5.0, right: 10.0),
-                      height: 50.0,
-                      width: MediaQuery.of(context).size.width - 10,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                          BorderRadius.all(Radius.circular(40.0))),
-                      child: TextField(
-                        autofocus: false,
-                        focusNode: FocusNode(canRequestFocus: false),
-                        showCursor: false,
-                        controller: textEditingController,
-                        textAlign: TextAlign.justify,
-                        decoration: InputDecoration(
-                            disabledBorder: OutlineInputBorder(
-                                borderSide:
-                                BorderSide(color: Colors.transparent)),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                BorderSide(color: Colors.transparent)),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                BorderSide(color: Colors.transparent)),
-                            contentPadding: EdgeInsets.all(12.0),
-                            prefixIcon: Icon(
-                              Icons.search,
-                              size: 30.0,
-                            ),
-                            hintText: 'Search',
-                            hintStyle: TextStyle(fontSize: 18.0)),
-                        onChanged: (value) {
-                          setState(() {
-                            searchRecipy(value);
-                          });
-                        },
-                      )
+                    padding: EdgeInsets.only(
+                      top: 1.0,
+                      left: 5.0,
+                      right: 10.0,
+                    ),
+                    height: 50.0,
+                    width: MediaQuery.of(context).size.width - 10,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(40.0),
+                      ),
+                    ),
+                    child: TextField(
+                      autofocus: false,
+                      focusNode: FocusNode(
+                        canRequestFocus: false,
+                      ),
+                      showCursor: false,
+                      controller: textEditingController,
+                      textAlign: TextAlign.justify,
+                      decoration: InputDecoration(
+                        disabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                          ),
+                        ),
+                        contentPadding: EdgeInsets.all(12.0),
+                        prefixIcon: Icon(
+                          Icons.search,
+                          size: 30.0,
+                        ),
+                        hintText: 'Search',
+                        hintStyle: TextStyle(
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          searchRecipy(
+                            value,
+                          );
+                        });
+                      },
+                    ),
                   ),
                 ),
               ],
@@ -314,8 +371,11 @@ class _HomePageState extends State<HomePage> {
           primary: false,
           itemCount: filteredList.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
-          padding: const EdgeInsets.all(10.0),
+            crossAxisCount: 2,
+            mainAxisSpacing: 15,
+            crossAxisSpacing: 15,
+          ),
+          padding: EdgeInsets.all(10.0),
           itemBuilder: _buildItems,
         ),
       ),
@@ -326,11 +386,12 @@ class _HomePageState extends State<HomePage> {
     Recipy rec = filteredList[index];
     return GridTile(
       child: GestureDetector(
-          onTap: () => _navigateToDetails(rec),
-          child: RecDesign(
-            title: rec.recipyname,
-            imgURL: rec.itemimage,
-          )),
+        onTap: () => _navigateToDetails(rec),
+        child: RecDesign(
+          title: rec.recipyname,
+          imgURL: rec.itemimage,
+        ),
+      ),
     );
   }
 
@@ -340,18 +401,20 @@ class _HomePageState extends State<HomePage> {
       onWillPop: _onBackPressed,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Recipes'),
+          title: Text(
+            'Recipes',
+          ),
           centerTitle: true,
           elevation: 0.0,
           backgroundColor: Colors.teal,
           actions: <Widget>[
             IconButton(
-                icon: Icon(
-                  Icons.chat,
-                  color: Colors.white,
-                ),
-                onPressed: null
-            )
+              icon: Icon(
+                Icons.chat,
+                color: Colors.white,
+              ),
+              onPressed: null,
+            ),
           ],
         ),
         drawer: Drawer(
