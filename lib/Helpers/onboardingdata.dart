@@ -4,17 +4,26 @@ class OnbordingData extends StatefulWidget {
   final String imagePath;
   final String title;
   final String desc;
-  OnbordingData({this.imagePath, this.title, this.desc});
+  OnbordingData({
+    this.imagePath,
+    this.title,
+    this.desc,
+  });
 
   @override
-  _OnbordingDataState createState() => _OnbordingDataState(this.imagePath, this.title, this.desc);
+  _OnbordingDataState createState() =>
+      _OnbordingDataState(this.imagePath, this.title, this.desc);
 }
 
 class _OnbordingDataState extends State<OnbordingData> {
   final String imagePath;
   final String title;
   final String desc;
-  _OnbordingDataState(this.imagePath, this.title, this.desc);
+  _OnbordingDataState(
+    this.imagePath,
+    this.title,
+    this.desc,
+  );
 
   @override
   Widget build(BuildContext context) {

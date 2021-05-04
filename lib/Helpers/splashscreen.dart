@@ -10,18 +10,20 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState()
-  {
+  void initState() {
     super.initState();
     Future.delayed(
-        Duration(
-          seconds: 5,
-        ), (){
-      Navigator.pushReplacement(context,MaterialPageRoute(
-        builder: (context) => TestScreen(),
+      Duration(
+        seconds: 5,
       ),
-      );
-    }
+      () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => TestScreen(),
+          ),
+        );
+      },
     );
   }
 
@@ -60,9 +62,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: 400,
                 child: FlareActor(
                   "assets/foodssplash.flr",
-                  alignment:Alignment.center,
+                  alignment: Alignment.center,
                   fit: BoxFit.contain,
-                  animation:"loading",
+                  animation: "loading",
                 ),
               ),
             ],

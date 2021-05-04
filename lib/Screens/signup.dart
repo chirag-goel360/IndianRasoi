@@ -5,7 +5,7 @@ import 'package:indiarasoi/Services/sign_in.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 
-class signPage extends StatelessWidget {
+class SignPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -90,7 +90,7 @@ class signPage extends StatelessWidget {
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
                               borderSide: BorderSide.none,
-                              borderRadius:BorderRadius.all(
+                              borderRadius: BorderRadius.all(
                                 Radius.circular(40.0),
                               ),
                             ),
@@ -108,7 +108,7 @@ class signPage extends StatelessWidget {
                           top: 30,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius:BorderRadius.all(
+                          borderRadius: BorderRadius.all(
                             Radius.circular(40.0),
                           ),
                         ),
@@ -127,7 +127,7 @@ class signPage extends StatelessWidget {
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
                               borderSide: BorderSide.none,
-                              borderRadius:BorderRadius.all(
+                              borderRadius: BorderRadius.all(
                                 Radius.circular(40),
                               ),
                             ),
@@ -146,7 +146,7 @@ class signPage extends StatelessWidget {
                         ),
                         elevation: 11,
                         shape: RoundedRectangleBorder(
-                          borderRadius:BorderRadius.all(
+                          borderRadius: BorderRadius.all(
                             Radius.circular(40),
                           ),
                         ),
@@ -165,7 +165,7 @@ class signPage extends StatelessWidget {
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
                               borderSide: BorderSide.none,
-                              borderRadius:BorderRadius.all(
+                              borderRadius: BorderRadius.all(
                                 Radius.circular(40),
                               ),
                             ),
@@ -184,11 +184,10 @@ class signPage extends StatelessWidget {
                             vertical: 16.0,
                           ),
                           color: Colors.pink.shade600,
-                          onPressed: () {
-                          },
+                          onPressed: () {},
                           elevation: 10,
                           shape: RoundedRectangleBorder(
-                            borderRadius:BorderRadius.all(
+                            borderRadius: BorderRadius.all(
                               Radius.circular(40.0),
                             ),
                           ),
@@ -241,13 +240,17 @@ class signPage extends StatelessWidget {
                               child: RawMaterialButton(
                                 shape: CircleBorder(),
                                 onPressed: () {
-                                  facebookLogin().whenComplete(() {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                                      return LoginPage();
+                                  facebookLogin().whenComplete(
+                                    () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return LoginPage();
+                                          },
+                                        ),
+                                      );
                                     },
-                                    ),
-                                    );
-                                  });
+                                  );
                                 },
                                 child: Icon(
                                   FontAwesomeIcons.facebookF,
@@ -276,14 +279,17 @@ class signPage extends StatelessWidget {
                               child: RawMaterialButton(
                                 shape: CircleBorder(),
                                 onPressed: () {
-                                  signInwithGoogle().whenComplete(() {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                                      //Open Chat Page here
-                                      return LoginPage();
+                                  signInwithGoogle().whenComplete(
+                                    () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return LoginPage();
+                                          },
+                                        ),
+                                      );
                                     },
-                                    ),
-                                    );
-                                  });
+                                  );
                                 },
                                 child: Icon(
                                   FontAwesomeIcons.google,
@@ -317,11 +323,12 @@ class signPage extends StatelessWidget {
                             ),
                             textColor: Colors.indigo,
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                                //Open Chat Page here
-                                return LoginPage();
-                              },
-                              ),
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return LoginPage();
+                                  },
+                                ),
                               );
                             },
                           ),

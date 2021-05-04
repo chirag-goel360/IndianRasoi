@@ -21,7 +21,8 @@ class LoginPage extends StatelessWidget {
                       Colors.teal,
                       Colors.tealAccent[700],
                     ],
-                    [Colors.teal[100],
+                    [
+                      Colors.teal[100],
                       Colors.tealAccent[700],
                     ],
                   ],
@@ -49,7 +50,8 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("Login",
+                    Text(
+                      "Login",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.red,
@@ -139,8 +141,7 @@ class LoginPage extends StatelessWidget {
                           vertical: 16.0,
                         ),
                         color: Colors.pink,
-                        onPressed: (){
-                        },
+                        onPressed: () {},
                         elevation: 11,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
@@ -182,8 +183,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                           textColor: Colors.indigo,
-                          onPressed: (){
-                          },
+                          onPressed: () {},
                         ),
                       ],
                     ),

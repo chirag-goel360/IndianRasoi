@@ -5,7 +5,10 @@ import 'package:indiarasoi/Helpers/onboardingdata.dart';
 class IntroScreen extends StatefulWidget {
   final List<OnbordingData> onbordingDataList;
   final MaterialPageRoute pageRoute;
-  IntroScreen(this.onbordingDataList, this.pageRoute);
+  IntroScreen(
+    this.onbordingDataList,
+    this.pageRoute,
+  );
 
   void skipPage(BuildContext context) {
     Navigator.pushReplacement(context, pageRoute);
@@ -27,8 +30,7 @@ class IntroScreenState extends State<IntroScreen> {
       currentPage = page;
       if (currentPage == widget.onbordingDataList.length - 1) {
         lastPage = true;
-      }
-      else {
+      } else {
         lastPage = false;
       }
     });
@@ -83,10 +85,7 @@ class IntroScreenState extends State<IntroScreen> {
                         fontSize: 16.0,
                       ),
                     ),
-                    onPressed: () => lastPage ? null :
-                    widget.skipPage(
-                      context,
-                    ),
+                    onPressed: () => lastPage ? null : widget.skipPage(context),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -111,14 +110,14 @@ class IntroScreenState extends State<IntroScreen> {
                         fontSize: 16.0,
                       ),
                     ),
-                    onPressed: () => lastPage ?
-                    widget.skipPage(context) :
-                    controller.nextPage(
-                      duration: Duration(
-                        milliseconds: 300,
-                      ),
-                      curve: Curves.easeIn,
-                    ),
+                    onPressed: () => lastPage
+                        ? widget.skipPage(context)
+                        : controller.nextPage(
+                            duration: Duration(
+                              milliseconds: 300,
+                            ),
+                            curve: Curves.easeIn,
+                          ),
                   ),
                 ],
               ),

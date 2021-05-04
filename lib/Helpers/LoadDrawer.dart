@@ -7,7 +7,10 @@ import 'package:indiarasoi/Screens/RecipyInfo.dart';
 class LoadData extends StatefulWidget {
   final String category;
   final List<Recipy> foods;
-  LoadData({this.category, this.foods});
+  LoadData({
+    this.category,
+    this.foods,
+  });
 
   @override
   _LoadDataState createState() => _LoadDataState();
@@ -68,7 +71,9 @@ class _LoadDataState extends State<LoadData> {
     Recipy rec = items[index];
     return GridTile(
       child: GestureDetector(
-        onTap: () => _navigateToDetails(rec),
+        onTap: () {
+          _navigateToDetails(rec);
+        },
         child: RecDesign(
           title: rec.recipyname,
           imgURL: rec.itemimage,
@@ -104,14 +109,16 @@ class _LoadDataState extends State<LoadData> {
               Icons.chat,
               color: Colors.white,
             ),
-            onPressed: null,
+            onPressed: () {},
           ),
         ],
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
           ),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: _buildBody(context),

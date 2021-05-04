@@ -2,15 +2,15 @@ import 'dart:async';
 import 'package:indiarasoi/Models/recipy.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class FoodApi{
-  Future<List<Recipy>> getAllRecipy() async{
+class FoodApi {
+  Future<List<Recipy>> getAllRecipy() async {
     return (await Firestore.instance.collection('recipies').getDocuments())
-        .documents.map((snapShot) => _fromDocumentSnapshot(snapShot))
+        .documents
+        .map((snapShot) => _fromDocumentSnapshot(snapShot))
         .toList();
   }
 
-  Recipy _fromDocumentSnapshot(DocumentSnapshot snapshot)
-  {
+  Recipy _fromDocumentSnapshot(DocumentSnapshot snapshot) {
     final data = snapshot.data;
     return Recipy(
       documentId: snapshot.documentID,

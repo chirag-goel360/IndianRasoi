@@ -28,10 +28,13 @@ class _DevelopersState extends State<Developers> {
         ),
         backgroundColor: Colors.teal,
         leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back_ios,
-            ),
-            onPressed: () => Navigator.of(context).pop()),
+          icon: Icon(
+            Icons.arrow_back_ios,
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body: PageView(
         pageSnapping: true,
@@ -73,11 +76,14 @@ class _DevelopersState extends State<Developers> {
                                         left: 95.0,
                                       ),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
                                             "Ritik Miglani",
-                                            style: Theme.of(context).textTheme.title,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .title,
                                           ),
                                           ListTile(
                                             contentPadding: EdgeInsets.all(0),
@@ -228,18 +234,22 @@ class _DevelopersState extends State<Developers> {
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Container(
                                         margin: EdgeInsets.only(
                                           left: 95.0,
                                         ),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: <Widget>[
                                             Text(
                                               "Chirag Goel",
-                                              style: Theme.of(context).textTheme.title,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .title,
                                             ),
                                             ListTile(
                                               contentPadding: EdgeInsets.all(0),

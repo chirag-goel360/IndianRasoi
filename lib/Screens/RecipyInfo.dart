@@ -4,7 +4,9 @@ import 'package:indiarasoi/Screens/FillDetails.dart';
 
 class RecipyInfo extends StatefulWidget {
   final Recipy rec;
-  RecipyInfo(this.rec);
+  RecipyInfo(
+    this.rec,
+  );
 
   @override
   _RecipyInfoState createState() => _RecipyInfoState();
@@ -42,12 +44,15 @@ class _RecipyInfoState extends State<RecipyInfo> {
               ),
             ),
             SliverList(
-              delegate: SliverChildBuilderDelegate((BuildContext context,int index){
-                if(index>=1) return null;
-                return fillDetails(
-                  widget.rec,
-                );
-              },
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  if (index >= 1) {
+                    return null;
+                  }
+                  return FillDetails(
+                    widget.rec,
+                  );
+                },
               ),
             ),
           ],

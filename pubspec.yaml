@@ -34,7 +34,7 @@ dependencies:
   transformer_page_view:
   social_media_widgets:
   font_awesome_flutter: ^8.8.1
-  wave: ^0.0.8
+  wave:
   shared_preferences:
   url_launcher: ^5.4.11
   flutter_facebook_login:

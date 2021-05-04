@@ -3,17 +3,18 @@ import 'package:flutter_gradients/flutter_gradients.dart';
 import 'package:indiarasoi/Models/recipy.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-class fillDetails extends StatefulWidget {
+class FillDetails extends StatefulWidget {
   final Recipy rec;
-  fillDetails(this.rec);
+  FillDetails(
+    this.rec,
+  );
 
   @override
-  _fillDetailsState createState() => _fillDetailsState();
+  _FillDetailsState createState() => _FillDetailsState();
 }
 
-class _fillDetailsState extends State<fillDetails> {
-  Widget chips(String label,Color color)
-  {
+class _FillDetailsState extends State<FillDetails> {
+  Widget chips(String label, Color color) {
     return Container(
       child: Chip(
         label: Text(
@@ -41,7 +42,7 @@ class _fillDetailsState extends State<fillDetails> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient:FlutterGradient.cloudyApple(),
+        gradient: FlutterGradient.cloudyApple(),
       ),
       child: Column(
         children: <Widget>[
@@ -163,7 +164,7 @@ class _fillDetailsState extends State<fillDetails> {
           ),
           Wrap(
             children: <Widget>[
-              for(int i=0;i<widget.rec.ingredients.length;i++)
+              for (int i = 0; i < widget.rec.ingredients.length; i++)
                 chips(
                   widget.rec.ingredients[i],
                   Colors.green,
@@ -185,7 +186,7 @@ class _fillDetailsState extends State<fillDetails> {
           ),
           Wrap(
             children: <Widget>[
-              for(int i=0;i<widget.rec.categories.length;i++)
+              for (int i = 0; i < widget.rec.categories.length; i++)
                 chips(
                   widget.rec.categories[i],
                   Colors.blue,
@@ -208,12 +209,12 @@ class _fillDetailsState extends State<fillDetails> {
     );
   }
 
-  Widget buildItemsContent(BuildContext context){
+  Widget buildItemsContent(BuildContext context) {
     print(widget.rec.steps.length);
     return Container(
       child: Column(
         children: <Widget>[
-          for(int i=0;i<widget.rec.steps.length;i++)
+          for (int i = 0; i < widget.rec.steps.length; i++)
             Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
@@ -226,17 +227,17 @@ class _fillDetailsState extends State<fillDetails> {
                   ListTile(
                     leading: CircleAvatar(
                       radius: 20,
-                      child:  Text(
-                        (i+1).toString(),
+                      child: Text(
+                        (i + 1).toString(),
                       ),
                     ),
                     title: Text(
-                      'Step No.'+ (i+1).toString(),
+                      'Step No.' + (i + 1).toString(),
                       style: TextStyle(
                         color: Colors.black,
                       ),
                     ),
-                    subtitle: Text (
+                    subtitle: Text(
                       widget.rec.steps[i],
                       style: TextStyle(
                         color: Colors.black,

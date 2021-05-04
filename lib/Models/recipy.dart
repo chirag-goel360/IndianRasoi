@@ -1,6 +1,6 @@
 import 'package:meta/meta.dart';
 
-class Recipy{
+class Recipy {
   final String documentId;
   final int id;
   final String recipyname;

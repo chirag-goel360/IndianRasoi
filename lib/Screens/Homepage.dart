@@ -33,59 +33,70 @@ class _HomePageState extends State<HomePage> {
   List<Recipy> filteredList = [];
   void searchRecipy(String name) {
     print(foods);
-    print(foods.where((foodName) => foodName.recipyname.toLowerCase().startsWith(name))
-        .toList(),
+    print(
+      foods
+          .where(
+              (foodName) => foodName.recipyname.toLowerCase().startsWith(name))
+          .toList(),
     );
     setState(() {
-      filteredList = foods.where((foodName) => foodName.recipyname.toLowerCase().startsWith(name))
+      filteredList = foods
+          .where(
+              (foodName) => foodName.recipyname.toLowerCase().startsWith(name))
           .toList();
     });
   }
 
   Future<bool> _onBackPressed() {
     return showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
-        ),
-        title: Text(
-          'Are you Sure?',
-        ),
-        content: Text(
-          'Do you want to exit Application',
-        ),
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(15),
-            child: GestureDetector(
-              onTap: () => Navigator.of(context).pop(),
-              child: Text(
-                "NO",
-                style: TextStyle(
-                  color: Colors.blueAccent,
-                ),
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
               ),
-            ),
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          Padding(
-            padding: EdgeInsets.all(15),
-            child: GestureDetector(
-              onTap: () => SystemNavigator.pop(),
-              child: Text(
-                "YES",
-                style: TextStyle(
-                  color: Colors.blueAccent,
-                ),
+              title: Text(
+                'Are you Sure?',
               ),
-            ),
-          ),
-        ],
-      ),
-    ) ??
+              content: Text(
+                'Do you want to exit Application',
+              ),
+              actions: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(15),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text(
+                      "NO",
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Padding(
+                  padding: EdgeInsets.all(15),
+                  child: GestureDetector(
+                    onTap: () {
+                      SystemNavigator.pop();
+                    },
+                    child: Text(
+                      "YES",
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
+        ) ??
         false;
   }
 
@@ -143,12 +154,14 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,MaterialPageRoute(
-              builder: (context) => LoadData(
-                category: 'Dessert',
-                foods: foods,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoadData(
+                  category: 'Dessert',
+                  foods: foods,
+                ),
               ),
-            ),
             );
           },
         ),
@@ -158,12 +171,14 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,MaterialPageRoute(
-              builder: (context) => LoadData(
-                category: 'Snacks',
-                foods: foods,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoadData(
+                  category: 'Snacks',
+                  foods: foods,
+                ),
               ),
-            ),
             );
           },
         ),
@@ -173,12 +188,14 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,MaterialPageRoute(
-              builder: (context) => LoadData(
-                category: 'Main Course',
-                foods: foods,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoadData(
+                  category: 'Main Course',
+                  foods: foods,
+                ),
               ),
-            ),
             );
           },
         ),
@@ -188,12 +205,14 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,MaterialPageRoute(
-              builder: (context) => LoadData(
-                category: 'Breakfast',
-                foods: foods,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoadData(
+                  category: 'Breakfast',
+                  foods: foods,
+                ),
               ),
-            ),
             );
           },
         ),
@@ -203,12 +222,14 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,MaterialPageRoute(
-              builder: (context) => LoadData(
-                category: 'Lunch',
-                foods: foods,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoadData(
+                  category: 'Lunch',
+                  foods: foods,
+                ),
               ),
-            ),
             );
           },
         ),
@@ -218,12 +239,14 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,MaterialPageRoute(
-              builder: (context) => LoadData(
-                category: 'Dinner',
-                foods: foods,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoadData(
+                  category: 'Dinner',
+                  foods: foods,
+                ),
               ),
-            ),
             );
           },
         ),
@@ -233,12 +256,14 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,MaterialPageRoute(
-              builder: (context) => LoadData(
-                category: 'EasyCook',
-                foods: foods,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoadData(
+                  category: 'EasyCook',
+                  foods: foods,
+                ),
               ),
-            ),
             );
           },
         ),
@@ -248,9 +273,11 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,MaterialPageRoute(
-              builder: (context) => OurStories(),
-            ),
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => OurStories(),
+              ),
             );
           },
         ),
@@ -263,9 +290,10 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.push(
-              context,MaterialPageRoute(
-              builder: (context) => Developers(),
-            ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => Developers(),
+              ),
             );
           },
         ),
@@ -386,7 +414,9 @@ class _HomePageState extends State<HomePage> {
     Recipy rec = filteredList[index];
     return GridTile(
       child: GestureDetector(
-        onTap: () => _navigateToDetails(rec),
+        onTap: () {
+          _navigateToDetails(rec);
+        },
         child: RecDesign(
           title: rec.recipyname,
           imgURL: rec.itemimage,
@@ -413,7 +443,7 @@ class _HomePageState extends State<HomePage> {
                 Icons.chat,
                 color: Colors.white,
               ),
-              onPressed: null,
+              onPressed: () {},
             ),
           ],
         ),

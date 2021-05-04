@@ -27,7 +27,7 @@ class OurStories extends StatefulWidget {
 }
 
 class _OurStoriesState extends State<OurStories> {
-  _onClickStories(){
+  _onClickStories() {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -40,6 +40,7 @@ class _OurStoriesState extends State<OurStories> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -6,7 +6,11 @@ class RecDesign extends StatelessWidget {
   final String title;
   final String imgURL;
 
-  RecDesign({this.title, this.imgURL});
+  RecDesign({
+    this.title,
+    this.imgURL,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +33,7 @@ class RecDesign extends StatelessWidget {
           Container(
             height: 130,
             width: 200,
-            child:Image(
+            child: Image(
               image: NetworkImage(
                 imgURL,
               ),

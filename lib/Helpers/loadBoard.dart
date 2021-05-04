@@ -8,7 +8,8 @@ class TestScreen extends StatelessWidget {
     OnbordingData(
       imagePath: "assets/onboarding1.jpg",
       title: "Indian Rasoi",
-      desc: "Welcome to Indian Rasoi\n App for food lovers\n Satisfy your taste",
+      desc:
+          "Welcome to Indian Rasoi\n App for food lovers\n Satisfy your taste",
     ),
     OnbordingData(
       imagePath: "assets/onboarding2.png",
@@ -24,7 +25,7 @@ class TestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  IntroScreen(
+    return IntroScreen(
       list,
       MaterialPageRoute(
         builder: (context) => HomePage(),
