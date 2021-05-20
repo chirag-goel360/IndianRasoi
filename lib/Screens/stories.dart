@@ -60,7 +60,7 @@ class _OurStoriesState extends State<OurStories> {
               SizedBox(
                 height: 16,
               ),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: _onClickStories,
                 child: Text(
                   'Story Swipe',

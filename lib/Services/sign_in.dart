@@ -58,6 +58,7 @@ Future<String> facebookLogin() async {
   } catch (e) {
     print(e);
   }
+  return null;
 }
 
 //facebook logout

@@ -179,18 +179,20 @@ class SignPage extends StatelessWidget {
                       Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(30.0),
-                        child: RaisedButton(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 16.0,
-                          ),
-                          color: Colors.pink.shade600,
-                          onPressed: () {},
-                          elevation: 10,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(40.0),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 16.0,
                             ),
+                            elevation: 10,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(40.0),
+                              ),
+                            ),
+                            primary: Colors.pink.shade600,
                           ),
+                          onPressed: () {},
                           child: Text(
                             "SignUp",
                             style: TextStyle(
@@ -313,7 +315,10 @@ class SignPage extends StatelessWidget {
                               fontSize: 18,
                             ),
                           ),
-                          FlatButton(
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              primary: Colors.indigo,
+                            ),
                             child: Text(
                               "Login",
                               style: TextStyle(
@@ -321,7 +326,6 @@ class SignPage extends StatelessWidget {
                                 fontWeight: FontWeight.w900,
                               ),
                             ),
-                            textColor: Colors.indigo,
                             onPressed: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(

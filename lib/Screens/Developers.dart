@@ -83,7 +83,7 @@ class _DevelopersState extends State<Developers> {
                                             "Ritik Miglani",
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .title,
+                                                .headline6,
                                           ),
                                           ListTile(
                                             contentPadding: EdgeInsets.all(0),
@@ -249,7 +249,7 @@ class _DevelopersState extends State<Developers> {
                                               "Chirag Goel",
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .title,
+                                                  .headline6,
                                             ),
                                             ListTile(
                                               contentPadding: EdgeInsets.all(0),

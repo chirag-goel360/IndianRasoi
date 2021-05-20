@@ -136,18 +136,20 @@ class LoginPage extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.all(30.0),
-                      child: RaisedButton(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 16.0,
-                        ),
-                        color: Colors.pink,
-                        onPressed: () {},
-                        elevation: 11,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(40.0),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 16.0,
+                          ),
+                          primary: Colors.pink,
+                          elevation: 11,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(40.0),
+                            ),
                           ),
                         ),
+                        onPressed: () {},
                         child: Text(
                           "Login",
                           style: TextStyle(
@@ -174,7 +176,10 @@ class LoginPage extends StatelessWidget {
                             fontSize: 18,
                           ),
                         ),
-                        FlatButton(
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.indigo,
+                          ),
                           child: Text(
                             "SignUp",
                             style: TextStyle(
@@ -182,7 +187,6 @@ class LoginPage extends StatelessWidget {
                               fontWeight: FontWeight.w900,
                             ),
                           ),
-                          textColor: Colors.indigo,
                           onPressed: () {},
                         ),
                       ],
